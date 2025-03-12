@@ -19,7 +19,7 @@ from azure.ai.inference.models import (
     UserMessage,
 )
 
-INFERENCE_ENDPOINT = "https://models.github.ai/inference"
+INFERENCE_ENDPOINT = "https://models.inference.ai.azure.com"
 
 CHAT_MODELS = [
     ("AI21-Jamba-1.5-Large", True, ["text"], ["text"]),
