@@ -2,7 +2,7 @@ import llm
 from llm.models import Attachment, Conversation, Prompt, Response
 from typing import Optional, Iterator, List
 
-from azure.ai.inference import ChatCompletionsClient
+from azure.ai.inference import ChatCompletionsClient, EmbeddingsClient
 from azure.core.credentials import AzureKeyCredential
 from azure.ai.inference.models import (
     ChatRequestMessage,
@@ -114,6 +114,15 @@ def register_models(register):
                 output_modalities=output_modalities,
                 api_version=api_version
             )
+        )
+
+
+@llm.hookimpl
+def register_embedding_models(register):
+    # Register embedding models
+    for model_id in EMBEDDING_MODELS:
+        register(
+            GitHubEmbeddingModel(model_id)
         )
 
 
@@ -270,3 +279,27 @@ class GitHubModels(llm.Model):
             )
             response.response_json = None  # TODO
             yield completion.choices[0].message.content
+
+
+class GitHubEmbeddingModel(llm.EmbeddingModel):
+    needs_key = "github"
+    key_env_var = "GITHUB_MODELS_KEY"
+
+    def __init__(self, model_id: str):
+        self.model_id = f"github/{model_id}"
+        self.model_name = model_id
+
+    def embed_batch(self, texts: List[str]) -> List[List[float]]:
+        if not texts:
+            return []
+
+        key = self.get_key()
+        client = EmbeddingsClient(
+            endpoint=INFERENCE_ENDPOINT,
+            credential=AzureKeyCredential(key),
+        )
+        response = client.embed(
+            model=self.model_name,
+            input=texts,
+        )
+        return [item.embedding for item in response.data]
