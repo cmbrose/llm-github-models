@@ -2,7 +2,7 @@ import llm
 from llm.models import Attachment, Conversation, Prompt, Response
 from typing import Optional, Iterator, List
 
-from azure.ai.inference import ChatCompletionsClient
+from azure.ai.inference import ChatCompletionsClient, EmbeddingsClient
 from azure.core.credentials import AzureKeyCredential
 from azure.ai.inference.models import (
     ChatRequestMessage,
@@ -32,8 +32,10 @@ CHAT_MODELS = [
     ("DeepSeek-R1", True, ["text"], ["text"]),
     ("DeepSeek-V3", True, ["text"], ["text"]),
     ("DeepSeek-V3-0324", True, ["text"], ["text"]),
-    ("Llama-3.2-11B-Vision-Instruct", True, ["text", "image", "audio"], ["text"]),
-    ("Llama-3.2-90B-Vision-Instruct", True, ["text", "image", "audio"], ["text"]),
+    ("Llama-3.2-11B-Vision-Instruct", True,
+     ["text", "image", "audio"], ["text"]),
+    ("Llama-3.2-90B-Vision-Instruct", True,
+     ["text", "image", "audio"], ["text"]),
     ("Llama-3.3-70B-Instruct", True, ["text"], ["text"]),
     ("Meta-Llama-3-70B-Instruct", True, ["text"], ["text"]),
     ("Meta-Llama-3-8B-Instruct", True, ["text"], ["text"]),
@@ -91,6 +93,15 @@ def register_models(register):
         )
 
 
+@llm.hookimpl
+def register_embedding_models(register):
+    # Register embedding models
+    for model_id in EMBEDDING_MODELS:
+        register(
+            GitHubEmbeddingModel(model_id)
+        )
+
+
 IMAGE_ATTACHMENTS = {
     "image/png",
     "image/jpeg",
@@ -133,7 +144,8 @@ def attachment_as_content_item(attachment: Attachment) -> ContentItem:
                 ),
             )
 
-    raise ValueError(f"Unsupported attachment type: {attachment.resolve_type()}")
+    raise ValueError(
+        f"Unsupported attachment type: {attachment.resolve_type()}")
 
 
 def build_messages(
@@ -156,7 +168,8 @@ def build_messages(
                         TextContentItem(text=prev_response.prompt.prompt)
                     )
                 for attachment in prev_response.attachments:
-                    attachment_message.append(attachment_as_content_item(attachment))
+                    attachment_message.append(
+                        attachment_as_content_item(attachment))
                 messages.append(UserMessage(attachment_message))
             else:
                 messages.append(UserMessage(prev_response.prompt.prompt))
@@ -240,3 +253,27 @@ class GitHubModels(llm.Model):
             )
             response.response_json = None  # TODO
             yield completion.choices[0].message.content
+
+
+class GitHubEmbeddingModel(llm.EmbeddingModel):
+    needs_key = "github"
+    key_env_var = "GITHUB_MODELS_KEY"
+
+    def __init__(self, model_id: str):
+        self.model_id = f"github/{model_id}"
+        self.model_name = model_id
+
+    def embed_batch(self, texts: List[str]) -> List[List[float]]:
+        if not texts:
+            return []
+
+        key = self.get_key()
+        client = EmbeddingsClient(
+            endpoint=INFERENCE_ENDPOINT,
+            credential=AzureKeyCredential(key),
+        )
+        response = client.embed(
+            model=self.model_name,
+            input=texts,
+        )
+        return [item.embedding for item in response.data]
