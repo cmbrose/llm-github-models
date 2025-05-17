@@ -120,10 +120,17 @@ def register_models(register):
 @llm.hookimpl
 def register_embedding_models(register):
     # Register embedding models
-    for model_id in EMBEDDING_MODELS:
+    for model_id, supported_dimensions in EMBEDDING_MODELS:
         register(
             GitHubEmbeddingModel(model_id)
         )
+        for dimensions in supported_dimensions:
+            register(
+                GitHubEmbeddingModel(
+                    model_id,
+                    dimensions=dimensions
+                )
+            )
 
 
 IMAGE_ATTACHMENTS = {
@@ -285,11 +292,15 @@ class GitHubEmbeddingModel(llm.EmbeddingModel):
     needs_key = "github"
     key_env_var = "GITHUB_MODELS_KEY"
 
-    def __init__(self, model_id: str):
+    def __init__(self, model_id: str, dimensions: Optional[int] = None):
         self.model_id = f"github/{model_id}"
-        self.model_name = model_id
+        if dimensions is not None:
+            self.model_id += f"-{dimensions}"
 
-    def embed_batch(self, texts: List[str]) -> List[List[float]]:
+        self.model_name = model_id
+        self.dimensions = dimensions
+
+    def embed_batch(self, texts: List[str]) -> Iterator[List[float]]:
         if not texts:
             return []
 
@@ -298,8 +309,13 @@ class GitHubEmbeddingModel(llm.EmbeddingModel):
             endpoint=INFERENCE_ENDPOINT,
             credential=AzureKeyCredential(key),
         )
-        response = client.embed(
-            model=self.model_name,
-            input=texts,
-        )
-        return [item.embedding for item in response.data]
+
+        kwargs = {
+            "input": texts,
+            "model": self.model_name,
+        }
+        if self.dimensions:
+            kwargs["dimensions"] = self.dimensions
+
+        response = client.embed(**kwargs)
+        return ([float(x) for x in item.embedding] for item in response.data)
