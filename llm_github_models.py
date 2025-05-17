@@ -265,6 +265,7 @@ class GitHubModels(llm.Model):
 class GitHubEmbeddingModel(llm.EmbeddingModel):
     needs_key = "github"
     key_env_var = "GITHUB_MODELS_KEY"
+    batch_size = 100
 
     def __init__(self, model_id: str, dimensions: Optional[int] = None):
         self.model_id = f"github/{model_id}"
