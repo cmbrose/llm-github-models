@@ -10,6 +10,7 @@ classifiers = [
 ]
 dependencies = [
     "llm>=0.19",
+    "aiohttp>=3.11.18",
     "azure-ai-inference>=1.0.0b8",
 ]
 

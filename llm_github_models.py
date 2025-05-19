@@ -1,8 +1,10 @@
 import llm
 from llm.models import Attachment, Conversation, Prompt, Response
-from typing import Optional, Iterator, List
+from typing import AsyncGenerator, Optional, Iterator, List
 
 from azure.ai.inference import ChatCompletionsClient, EmbeddingsClient
+from azure.ai.inference.aio import ChatCompletionsClient as AsyncChatCompletionsClient
+
 from azure.core.credentials import AzureKeyCredential
 from azure.ai.inference.models import (
     ChatRequestMessage,
@@ -89,11 +91,16 @@ EMBEDDING_MODELS = [
 
 @llm.hookimpl
 def register_models(register):
-    # Register both sync and async versions of each model
     # TODO: Dynamically fetch this list
     for model_id, input_modalities, output_modalities, api_version in CHAT_MODELS:
         register(
             GitHubModels(
+                model_id,
+                input_modalities=input_modalities,
+                output_modalities=output_modalities,
+                api_version=api_version
+            ),
+            GitHubAsyncModels(
                 model_id,
                 input_modalities=input_modalities,
                 output_modalities=output_modalities,
@@ -204,7 +211,7 @@ def build_messages(
     return messages
 
 
-class GitHubModels(llm.Model):
+class _Shared:
     needs_key = "github"
     key_env_var = "GITHUB_MODELS_KEY"
     can_stream = True
@@ -218,6 +225,7 @@ class GitHubModels(llm.Model):
     ):
         self.model_id = f"github/{model_id}"
         self.model_name = model_id
+
         self.attachment_types = set()
         if input_modalities and "image" in input_modalities:
             self.attachment_types.update(IMAGE_ATTACHMENTS)
@@ -226,8 +234,16 @@ class GitHubModels(llm.Model):
 
         self.input_modalities = input_modalities
         self.output_modalities = output_modalities
-        self.api_version = api_version
 
+        self.client_kwargs = {}
+        if api_version:
+            self.client_kwargs["api_version"] = api_version
+
+    def __str__(self) -> str:
+        return f"GitHub Models: {self.model_id}"
+
+
+class GitHubModels(_Shared, llm.Model):
     def execute(
         self,
         prompt: Prompt,
@@ -237,39 +253,74 @@ class GitHubModels(llm.Model):
     ) -> Iterator[str]:
         key = self.get_key()
 
-        extra = {}
-        if self.api_version:
-            extra["api_version"] = self.api_version
-
-        client = ChatCompletionsClient(
+        with ChatCompletionsClient(
             endpoint=INFERENCE_ENDPOINT,
             credential=AzureKeyCredential(key),
             model=self.model_name,
-            **extra,
-        )
-        messages = build_messages(prompt, conversation)
-        if stream:
-            completion = client.complete(
-                messages=messages,
-                stream=True,
-            )
-            chunks = []
-            for chunk in completion:
-                chunks.append(chunk)
-                try:
-                    content = chunk.choices[0].delta.content
-                except IndexError:
-                    content = None
-                if content is not None:
-                    yield content
-            response.response_json = None  # TODO
-        else:
-            completion = client.complete(
-                messages=messages,
-                stream=False,
-            )
-            response.response_json = None  # TODO
-            yield completion.choices[0].message.content
+            **self.client_kwargs,
+        ) as client:
+            messages = build_messages(prompt, conversation)
+            if stream:
+                completion = client.complete(
+                    messages=messages,
+                    stream=True,
+                )
+                chunks = []
+                for chunk in completion:
+                    chunks.append(chunk)
+                    try:
+                        content = chunk.choices[0].delta.content
+                    except IndexError:
+                        content = None
+                    if content is not None:
+                        yield content
+                response.response_json = None  # TODO
+            else:
+                completion = client.complete(
+                    messages=messages,
+                    stream=False,
+                )
+                response.response_json = None  # TODO
+                yield completion.choices[0].message.content
+
+
+class GitHubAsyncModels(_Shared, llm.AsyncModel):
+    async def execute(
+        self,
+        prompt: Prompt,
+        stream: bool,
+        response: llm.AsyncResponse,
+        conversation: Optional[llm.AsyncConversation],
+    ) -> AsyncGenerator[str, None]:
+        key = self.get_key()
+
+        async with AsyncChatCompletionsClient(
+            endpoint=INFERENCE_ENDPOINT,
+            credential=AzureKeyCredential(key),
+            model=self.model_name,
+            **self.client_kwargs,
+        ) as client:
+            messages = build_messages(prompt, conversation)
+            if stream:
+                completion = await client.complete(
+                    messages=messages,
+                    stream=True,
+                )
+                async for chunk in completion:
+                    try:
+                        content = chunk.choices[0].delta.content
+                    except IndexError:
+                        content = None
+                    if content is not None:
+                        yield content
+                response.response_json = None  # TODO
+            else:
+                completion = await client.complete(
+                    messages=messages,
+                    stream=False,
+                )
+                response.response_json = None  # TODO
+                yield completion.choices[0].message.content
 
 
 class GitHubEmbeddingModel(llm.EmbeddingModel):
