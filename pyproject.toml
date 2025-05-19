@@ -24,3 +24,5 @@ github = "llm_github_models"
 
 [project.optional-dependencies]
 test = ["pytest", "pytest-recording"]
+
+models = ["bs4", "tqdm"]
