@@ -2,7 +2,7 @@ import llm
 from llm.models import Attachment, Conversation, Prompt, Response
 from typing import Optional, Iterator, List
 
-from azure.ai.inference import ChatCompletionsClient
+from azure.ai.inference import ChatCompletionsClient, EmbeddingsClient
 from azure.core.credentials import AzureKeyCredential
 from azure.ai.inference.models import (
     ChatRequestMessage,
@@ -115,6 +115,22 @@ def register_models(register):
                 api_version=api_version
             )
         )
+
+
+@llm.hookimpl
+def register_embedding_models(register):
+    # Register embedding models
+    for model_id, supported_dimensions in EMBEDDING_MODELS:
+        register(
+            GitHubEmbeddingModel(model_id)
+        )
+        for dimensions in supported_dimensions:
+            register(
+                GitHubEmbeddingModel(
+                    model_id,
+                    dimensions=dimensions
+                )
+            )
 
 
 IMAGE_ATTACHMENTS = {
@@ -270,3 +286,37 @@ class GitHubModels(llm.Model):
             )
             response.response_json = None  # TODO
             yield completion.choices[0].message.content
+
+
+class GitHubEmbeddingModel(llm.EmbeddingModel):
+    needs_key = "github"
+    key_env_var = "GITHUB_MODELS_KEY"
+    batch_size = 100
+
+    def __init__(self, model_id: str, dimensions: Optional[int] = None):
+        self.model_id = f"github/{model_id}"
+        if dimensions is not None:
+            self.model_id += f"-{dimensions}"
+
+        self.model_name = model_id
+        self.dimensions = dimensions
+
+    def embed_batch(self, texts: List[str]) -> Iterator[List[float]]:
+        if not texts:
+            return []
+
+        key = self.get_key()
+        client = EmbeddingsClient(
+            endpoint=INFERENCE_ENDPOINT,
+            credential=AzureKeyCredential(key),
+        )
+
+        kwargs = {
+            "input": texts,
+            "model": self.model_name,
+        }
+        if self.dimensions:
+            kwargs["dimensions"] = self.dimensions
+
+        response = client.embed(**kwargs)
+        return ([float(x) for x in item.embedding] for item in response.data)
