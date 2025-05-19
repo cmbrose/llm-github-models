@@ -22,75 +22,61 @@ from azure.ai.inference.models import (
 INFERENCE_ENDPOINT = "https://models.inference.ai.azure.com"
 
 CHAT_MODELS = [
-    ('AI21-Jamba-1.5-Large', True, ['text'], ['text'], None),
-    ('AI21-Jamba-1.5-Mini', True, ['text'], ['text'], None),
-    ('Codestral-2501', True, ['text'], ['text'], None),
-    ('Cohere-command-r', True, ['text'], ['text'], None),
-    ('Cohere-command-r-08-2024', True, ['text'], ['text'], None),
-    ('Cohere-command-r-plus', True, ['text'], ['text'], None),
-    ('Cohere-command-r-plus-08-2024', True, ['text'], ['text'], None),
-    ('DeepSeek-R1', True, ['text'], ['text'], None),
-    ('DeepSeek-V3-0324', True, ['text'], ['text'], None),
+    ('AI21-Jamba-1.5-Large', ['text'], ['text'], None),
+    ('AI21-Jamba-1.5-Mini', ['text'], ['text'], None),
+    ('Codestral-2501', ['text'], ['text'], None),
+    ('Cohere-command-r', ['text'], ['text'], None),
+    ('Cohere-command-r-08-2024', ['text'], ['text'], None),
+    ('Cohere-command-r-plus', ['text'], ['text'], None),
+    ('Cohere-command-r-plus-08-2024', ['text'], ['text'], None),
+    ('DeepSeek-R1', ['text'], ['text'], None),
+    ('DeepSeek-V3-0324', ['text'], ['text'], None),
     ('Llama-3.2-11B-Vision-Instruct',
-        True,
-        ['text', 'image', 'audio'],
-        ['text'],
-        None),
+     ['text', 'image', 'audio'], ['text'], None),
     ('Llama-3.2-90B-Vision-Instruct',
-        True,
-        ['text', 'image', 'audio'],
-        ['text'],
-        None),
-    ('Llama-3.3-70B-Instruct', True, ['text'], ['text'], None),
+     ['text', 'image', 'audio'], ['text'], None),
+    ('Llama-3.3-70B-Instruct', ['text'], ['text'], None),
     ('Llama-4-Maverick-17B-128E-Instruct-FP8',
-        True,
-        ['text', 'image'],
-        ['text'],
-        None),
-    ('Llama-4-Scout-17B-16E-Instruct', True,
      ['text', 'image'], ['text'], None),
-    ('MAI-DS-R1', True, ['text'], ['text'], None),
-    ('Meta-Llama-3-70B-Instruct', True, ['text'], ['text'], None),
-    ('Meta-Llama-3-8B-Instruct', True, ['text'], ['text'], None),
-    ('Meta-Llama-3.1-405B-Instruct', True, ['text'], ['text'], None),
-    ('Meta-Llama-3.1-70B-Instruct', True, ['text'], ['text'], None),
-    ('Meta-Llama-3.1-8B-Instruct', True, ['text'], ['text'], None),
-    ('Ministral-3B', True, ['text'], ['text'], None),
-    ('Mistral-Large-2411', True, ['text'], ['text'], None),
-    ('Mistral-Nemo', True, ['text'], ['text'], None),
-    ('Phi-3-medium-128k-instruct', True, ['text'], ['text'], None),
-    ('Phi-3-medium-4k-instruct', True, ['text'], ['text'], None),
-    ('Phi-3-mini-128k-instruct', True, ['text'], ['text'], None),
-    ('Phi-3-mini-4k-instruct', True, ['text'], ['text'], None),
-    ('Phi-3-small-128k-instruct', True, ['text'], ['text'], None),
-    ('Phi-3-small-8k-instruct', True, ['text'], ['text'], None),
-    ('Phi-3.5-MoE-instruct', True, ['text'], ['text'], None),
-    ('Phi-3.5-mini-instruct', True, ['text'], ['text'], None),
-    ('Phi-3.5-vision-instruct', True, ['text', 'image'], [], None),
-    ('Phi-4', True, ['text'], ['text'], None),
-    ('Phi-4-mini-instruct', True, ['text'], ['text'], None),
-    ('Phi-4-mini-reasoning', True, ['text'], ['text'], None),
-    ('Phi-4-multimodal-instruct',
-        True,
-        ['audio', 'image', 'text'],
-        ['text'],
-        None),
-    ('Phi-4-reasoning', True, ['text'], ['text'], None),
-    ('cohere-command-a', True, ['text'], ['text'], None),
-    ('gpt-4.1', True, ['text', 'image'], ['text'], None),
-    ('gpt-4.1-mini', True, ['text', 'image'], ['text'], None),
-    ('gpt-4.1-nano', True, ['text', 'image'], ['text'], None),
-    ('gpt-4o', True, ['text', 'image', 'audio'], ['text'], None),
-    ('gpt-4o-mini', True, ['text', 'image', 'audio'], ['text'], None),
-    ('jais-30b-chat', True, ['text'], ['text'], None),
-    ('mistral-medium-2505', True, ['text', 'image'], ['text'], None),
-    ('mistral-small-2503', True, ['text', 'image'], ['text'], None),
-    ('o1', False, ['text', 'image'], ['text'], None),
-    ('o1-mini', False, ['text'], ['text'], None),
-    ('o1-preview', False, ['text'], ['text'], None),
-    ('o3', False, ['text', 'image'], ['text'], '2024-12-01-preview'),
-    ('o3-mini', False, ['text'], ['text'], '2024-12-01-preview'),
-    ('o4-mini', False, ['text', 'image'], ['text'], '2024-12-01-preview')
+    ('Llama-4-Scout-17B-16E-Instruct', ['text', 'image'], ['text'], None),
+    ('MAI-DS-R1', ['text'], ['text'], None),
+    ('Meta-Llama-3-70B-Instruct', ['text'], ['text'], None),
+    ('Meta-Llama-3-8B-Instruct', ['text'], ['text'], None),
+    ('Meta-Llama-3.1-405B-Instruct', ['text'], ['text'], None),
+    ('Meta-Llama-3.1-70B-Instruct', ['text'], ['text'], None),
+    ('Meta-Llama-3.1-8B-Instruct', ['text'], ['text'], None),
+    ('Ministral-3B', ['text'], ['text'], None),
+    ('Mistral-Large-2411', ['text'], ['text'], None),
+    ('Mistral-Nemo', ['text'], ['text'], None),
+    ('Phi-3-medium-128k-instruct', ['text'], ['text'], None),
+    ('Phi-3-medium-4k-instruct', ['text'], ['text'], None),
+    ('Phi-3-mini-128k-instruct', ['text'], ['text'], None),
+    ('Phi-3-mini-4k-instruct', ['text'], ['text'], None),
+    ('Phi-3-small-128k-instruct', ['text'], ['text'], None),
+    ('Phi-3-small-8k-instruct', ['text'], ['text'], None),
+    ('Phi-3.5-MoE-instruct', ['text'], ['text'], None),
+    ('Phi-3.5-mini-instruct', ['text'], ['text'], None),
+    ('Phi-3.5-vision-instruct', ['text', 'image'], [], None),
+    ('Phi-4', ['text'], ['text'], None),
+    ('Phi-4-mini-instruct', ['text'], ['text'], None),
+    ('Phi-4-mini-reasoning', ['text'], ['text'], None),
+    ('Phi-4-multimodal-instruct', ['audio', 'image', 'text'], ['text'], None),
+    ('Phi-4-reasoning', ['text'], ['text'], None),
+    ('cohere-command-a', ['text'], ['text'], None),
+    ('gpt-4.1', ['text', 'image'], ['text'], None),
+    ('gpt-4.1-mini', ['text', 'image'], ['text'], None),
+    ('gpt-4.1-nano', ['text', 'image'], ['text'], None),
+    ('gpt-4o', ['text', 'image', 'audio'], ['text'], None),
+    ('gpt-4o-mini', ['text', 'image', 'audio'], ['text'], None),
+    ('jais-30b-chat', ['text'], ['text'], None),
+    ('mistral-medium-2505', ['text', 'image'], ['text'], None),
+    ('mistral-small-2503', ['text', 'image'], ['text'], None),
+    ('o1', ['text', 'image'], ['text'], None),
+    ('o1-mini', ['text'], ['text'], None),
+    ('o1-preview', ['text'], ['text'], None),
+    ('o3', ['text', 'image'], ['text'], '2024-12-01-preview'),
+    ('o3-mini', ['text'], ['text'], '2024-12-01-preview'),
+    ('o4-mini', ['text', 'image'], ['text'], '2024-12-01-preview')
 ]
 
 EMBEDDING_MODELS = [
@@ -105,11 +91,10 @@ EMBEDDING_MODELS = [
 def register_models(register):
     # Register both sync and async versions of each model
     # TODO: Dynamically fetch this list
-    for model_id, can_stream, input_modalities, output_modalities, api_version in CHAT_MODELS:
+    for model_id, input_modalities, output_modalities, api_version in CHAT_MODELS:
         register(
             GitHubModels(
                 model_id,
-                can_stream=can_stream,
                 input_modalities=input_modalities,
                 output_modalities=output_modalities,
                 api_version=api_version
@@ -222,18 +207,17 @@ def build_messages(
 class GitHubModels(llm.Model):
     needs_key = "github"
     key_env_var = "GITHUB_MODELS_KEY"
+    can_stream = True
 
     def __init__(
         self,
         model_id: str,
-        can_stream: bool,
         input_modalities: Optional[List[str]] = None,
         output_modalities: Optional[List[str]] = None,
         api_version: Optional[str] = None,
     ):
         self.model_id = f"github/{model_id}"
         self.model_name = model_id
-        self.can_stream = can_stream
         self.attachment_types = set()
         if input_modalities and "image" in input_modalities:
             self.attachment_types.update(IMAGE_ATTACHMENTS)

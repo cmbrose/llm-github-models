@@ -12,12 +12,6 @@ chat_models = []
 embedding_models = []
 
 
-def supports_streaming(name):
-    if name in ["o1", "o1-mini", "o1-preview", "o3-mini", "o3", "o4-mini"]:
-        return False
-    return True
-
-
 def api_version(name: str) -> str:
     if name in ["o3-mini", "o3", "o4-mini"]:
         return "2024-12-01-preview"
@@ -50,7 +44,6 @@ for model in models_by_task["chat-completion"]:
     chat_models.append(
         (
             model["original_name"],
-            supports_streaming(model["name"]),
             model["supported_input_modalities"],
             model["supported_output_modalities"],
             api_version(model["name"]),

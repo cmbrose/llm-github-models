@@ -2,4 +2,4 @@
 
 set -e
 
-llm set key github --key $GITHUB_TOKEN
+llm keys set github --value $GITHUB_TOKEN
