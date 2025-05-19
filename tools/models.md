@@ -1,55 +1,156 @@
 Chat models:
-[('AI21-Jamba-1.5-Large', False, ['text'], ['text']),
- ('AI21-Jamba-1.5-Mini', False, ['text'], ['text']),
- ('Codestral-2501', False, ['text'], ['text']),
- ('Cohere-command-r', False, ['text'], ['text']),
- ('Cohere-command-r-08-2024', False, ['text'], ['text']),
- ('Cohere-command-r-plus', False, ['text'], ['text']),
- ('Cohere-command-r-plus-08-2024', False, ['text'], ['text']),
- ('DeepSeek-R1', False, ['text'], ['text']),
- ('Llama-3.2-11B-Vision-Instruct', False, ['text', 'image', 'audio'], ['text']),
- ('Llama-3.2-90B-Vision-Instruct', False, ['text', 'image', 'audio'], ['text']),
- ('Llama-3.3-70B-Instruct', False, ['text'], ['text']),
- ('Meta-Llama-3-70B-Instruct', False, ['text'], ['text']),
- ('Meta-Llama-3-8B-Instruct', False, ['text'], ['text']),
- ('Meta-Llama-3.1-405B-Instruct', False, ['text'], ['text']),
- ('Meta-Llama-3.1-70B-Instruct', False, ['text'], ['text']),
- ('Meta-Llama-3.1-8B-Instruct', False, ['text'], ['text']),
- ('Ministral-3B', False, ['text'], ['text']),
- ('Mistral-Large-2411', False, ['text'], ['text']),
- ('Mistral-Nemo', False, ['text'], ['text']),
- ('Mistral-large', False, ['text'], ['text']),
- ('Mistral-large-2407', False, ['text'], ['text']),
- ('Mistral-small', False, ['text'], ['text']),
- ('Phi-3-medium-128k-instruct', False, ['text'], ['text']),
- ('Phi-3-medium-4k-instruct', False, ['text'], ['text']),
- ('Phi-3-mini-128k-instruct', False, ['text'], ['text']),
- ('Phi-3-mini-4k-instruct', False, ['text'], ['text']),
- ('Phi-3-small-128k-instruct', False, ['text'], ['text']),
- ('Phi-3-small-8k-instruct', False, ['text'], ['text']),
- ('Phi-3.5-MoE-instruct', False, ['text'], ['text']),
- ('Phi-3.5-mini-instruct', False, ['text'], ['text']),
- ('Phi-3.5-vision-instruct', False, ['text', 'image'], []),
- ('Phi-4', False, ['text'], ['text']),
- ('gpt-4o', False, ['text', 'image', 'audio'], ['text']),
- ('gpt-4o-mini', False, ['text', 'image', 'audio'], ['text']),
- ('jais-30b-chat', False, ['text'], ['text']),
- ('o1', True, ['text', 'image'], ['text']),
- ('o1-mini', True, ['text'], ['text']),
- ('o1-preview', True, ['text'], ['text'])]
+[('AI21-Jamba-1.5-Large', True, ['text'], ['text']),
+ ('AI21-Jamba-1.5-Mini', True, ['text'], ['text']),
+ ('Codestral-2501', True, ['text'], ['text']),
+ ('Cohere-command-r', True, ['text'], ['text']),
+ ('Cohere-command-r-08-2024', True, ['text'], ['text']),
+ ('Cohere-command-r-plus', True, ['text'], ['text']),
+ ('Cohere-command-r-plus-08-2024', True, ['text'], ['text']),
+ ('DeepSeek-R1', True, ['text'], ['text']),
+ ('DeepSeek-V3-0324', True, ['text'], ['text']),
+ ('Llama-3.2-11B-Vision-Instruct', True, ['text', 'image', 'audio'], ['text']),
+ ('Llama-3.2-90B-Vision-Instruct', True, ['text', 'image', 'audio'], ['text']),
+ ('Llama-3.3-70B-Instruct', True, ['text'], ['text']),
+ ('Llama-4-Maverick-17B-128E-Instruct-FP8', True, ['text', 'image'], ['text']),
+ ('Llama-4-Scout-17B-16E-Instruct', True, ['text', 'image'], ['text']),
+ ('MAI-DS-R1', True, ['text'], ['text']),
+ ('Meta-Llama-3-70B-Instruct', True, ['text'], ['text']),
+ ('Meta-Llama-3-8B-Instruct', True, ['text'], ['text']),
+ ('Meta-Llama-3.1-405B-Instruct', True, ['text'], ['text']),
+ ('Meta-Llama-3.1-70B-Instruct', True, ['text'], ['text']),
+ ('Meta-Llama-3.1-8B-Instruct', True, ['text'], ['text']),
+ ('Ministral-3B', True, ['text'], ['text']),
+ ('Mistral-Large-2411', True, ['text'], ['text']),
+ ('Mistral-Nemo', True, ['text'], ['text']),
+ ('Phi-3-medium-128k-instruct', True, ['text'], ['text']),
+ ('Phi-3-medium-4k-instruct', True, ['text'], ['text']),
+ ('Phi-3-mini-128k-instruct', True, ['text'], ['text']),
+ ('Phi-3-mini-4k-instruct', True, ['text'], ['text']),
+ ('Phi-3-small-128k-instruct', True, ['text'], ['text']),
+ ('Phi-3-small-8k-instruct', True, ['text'], ['text']),
+ ('Phi-3.5-MoE-instruct', True, ['text'], ['text']),
+ ('Phi-3.5-mini-instruct', True, ['text'], ['text']),
+ ('Phi-3.5-vision-instruct', True, ['text', 'image'], []),
+ ('Phi-4', True, ['text'], ['text']),
+ ('Phi-4-mini-instruct', True, ['text'], ['text']),
+ ('Phi-4-mini-reasoning', True, ['text'], ['text']),
+ ('Phi-4-multimodal-instruct', True, ['audio', 'image', 'text'], ['text']),
+ ('Phi-4-reasoning', True, ['text'], ['text']),
+ ('cohere-command-a', True, ['text'], ['text']),
+ ('gpt-4.1', True, ['text', 'image'], ['text']),
+ ('gpt-4.1-mini', True, ['text', 'image'], ['text']),
+ ('gpt-4.1-nano', True, ['text', 'image'], ['text']),
+ ('gpt-4o', True, ['text', 'image', 'audio'], ['text']),
+ ('gpt-4o-mini', True, ['text', 'image', 'audio'], ['text']),
+ ('jais-30b-chat', True, ['text'], ['text']),
+ ('mistral-medium-2505', True, ['text', 'image'], ['text']),
+ ('mistral-small-2503', True, ['text', 'image'], ['text']),
+ ('o1', False, ['text', 'image'], ['text']),
+ ('o1-mini', False, ['text'], ['text']),
+ ('o1-preview', False, ['text'], ['text']),
+ ('o3', True, ['text', 'image'], ['text']),
+ ('o3-mini', False, ['text'], ['text']),
+ ('o4-mini', True, ['text', 'image'], ['text'])]
 Embedding models:
-['Cohere-embed-v3-english',
- 'Cohere-embed-v3-multilingual',
- 'text-embedding-3-large',
- 'text-embedding-3-small']
-## Supported Models
-### OpenAI GPT-4o
+[('Cohere-embed-v3-english', []),
+ ('Cohere-embed-v3-multilingual', []),
+ ('text-embedding-3-large', [256, 1024]),
+ ('text-embedding-3-small', [512])]
+## Supported Chat Models
+
+### OpenAI GPT-4.1-mini
+
 ![Model Image](https://github.com//images/modules/marketplace/models/families/openai.svg)
+
+Usage: `llm -m github/gpt-4-1-mini`
+
+**Publisher:** OpenAI 
+
+**Description:** The gpt-4.1 series is the latest iteration of the `gpt-4o` model family. This iteration of models is specifically targeted for better coding and instruction following, making it better at handling complex technical and coding problems. 
+
+In addition, it increases the context token limit up to 1M input tokens and provides separate billing for small context (128k) and large (up to 1M) context inputs.
+
+As with the previous gpt-4o-mini model version it supports both text and vision in the with low cost and latency, enabling a wide variety of tasks including applications that chain or parallelize multiple model calls (e.g., calling multiple APIs), pass a large volume of context to the model (e.g., full code base or conversation history), or interact with customers through fast, real-time text responses (e.g., customer support chatbots).
+
+#### Resources
+
+- [Introducing the gpt-4.1 Series: OpenAI's new flagship multimodal model now in preview on Azure](https://aka.ms/gpt-4-dot-1-blog)
+ 
+
+### OpenAI GPT-4.1-nano
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/openai.svg)
+
+Usage: `llm -m github/gpt-4-1-nano`
+
+**Publisher:** OpenAI 
+
+**Description:** The gpt-4.1 series is the latest iteration of the `gpt-4o` model family. This iteration of models is specifically targeted for better coding and instruction following, making it better at handling complex technical and coding problems. 
+
+In addition, it increases the context token limit up to 1M input tokens and provides separate billing for small context (128k) and large (up to 1M) context inputs.
+
+`gpt-4.1-nano` supports both text and vision provides an even lower cost and latency compared to the `gpt-4o` and `gpt-4o-mini` models.
+
+#### Resources
+
+- [Introducing the gpt-4.1 Series: OpenAI's new flagship multimodal model now in preview on Azure](https://aka.ms/gpt-4-dot-1-blog)
+ 
+
+### OpenAI GPT-4.1
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/openai.svg)
+
+Usage: `llm -m github/gpt-4-1`
+
+**Publisher:** OpenAI 
+
+**Description:** The gpt-4.1 series is the latest iteration of the `gpt-4o` model family. This iteration of models is specifically targeted for better coding and instruction following, making it better at handling complex technical and coding problems. 
+
+In addition, it increases the context token limit up to 1M input tokens and provides separate billing for small context (128k) and large (up to 1M) context inputs.
+
+As with the previous gpt-4o model family, it supports a 16k output size and features such as:  
+
+- Text, image processing
+- JSON Mode
+- parallel function calling
+- Enhanced accuracy and responsiveness
+- Parity with English text and coding tasks compared to GPT-4 Turbo with Vision
+- Superior performance in non-English languages and in vision tasks
+- Support for enhancements
+- Support for complex structured outputs.
+
+#### Resources
+
+- [Introducing the gpt-4.1 Series: OpenAI's new flagship multimodal model now in preview on Azure](https://aka.ms/gpt-4-dot-1-blog)
+ 
+
+### OpenAI GPT-4o mini
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/openai.svg)
+
+Usage: `llm -m github/gpt-4o-mini`
+
+**Publisher:** OpenAI 
+
+**Description:** GPT-4o mini enables a broad range of tasks with its low cost and latency, such as applications that chain or parallelize multiple model calls (e.g., calling multiple APIs), pass a large volume of context to the model (e.g., full code base or conversation history), or interact with customers through fast, real-time text responses (e.g., customer support chatbots).
+
+Today, GPT-4o mini supports text and vision in the API, with support for text, image, video and audio inputs and outputs coming in the future. The model has a context window of 128K tokens and knowledge up to October 2023. Thanks to the improved tokenizer shared with GPT-4o, handling non-English text is now even more cost effective.
+
+GPT-4o mini surpasses GPT-3.5 Turbo and other small models on academic benchmarks across both textual intelligence and multimodal reasoning, and supports the same range of languages as GPT-4o. It also demonstrates strong performance in function calling, which can enable developers to build applications that fetch data or take actions with external systems, and improved long-context performance compared to GPT-3.5 Turbo.
+
+#### Resources
+
+- [OpenAI announcement](https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/) 
+
+### OpenAI GPT-4o
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/openai.svg)
+
 Usage: `llm -m github/gpt-4o`
 
-**Publisher:**  OpenAI 
+**Publisher:** OpenAI 
 
-**Description:**  gpt-4o offers a shift in how AI models interact with multimodal inputs. By seamlessly combining text, images, and audio, gpt-4o provides a richer, more engaging user experience.
+**Description:** gpt-4o offers a shift in how AI models interact with multimodal inputs. By seamlessly combining text, images, and audio, gpt-4o provides a richer, more engaging user experience.
 
 Matching the intelligence of gpt-4 turbo, it is remarkably more efficient, delivering text at twice the speed and at half the cost. Additionally, GPT-4o exhibits the highest vision performance and excels in non-English languages compared to previous OpenAI models.
 
@@ -80,62 +181,15 @@ The introduction of gpt-4o opens numerous possibilities for businesses in variou
 - [Introducing gpt-4o: OpenAI's new flagship multimodal model now in preview on Azure](https://azure.microsoft.com/blog/introducing-gpt-4o-openais-new-flagship-multimodal-model-now-in-preview-on-azure/)
  
 
-### OpenAI GPT-4o mini
-![Model Image](https://github.com//images/modules/marketplace/models/families/openai.svg)
-Usage: `llm -m github/gpt-4o-mini`
-
-**Publisher:**  OpenAI 
-
-**Description:**  GPT-4o mini enables a broad range of tasks with its low cost and latency, such as applications that chain or parallelize multiple model calls (e.g., calling multiple APIs), pass a large volume of context to the model (e.g., full code base or conversation history), or interact with customers through fast, real-time text responses (e.g., customer support chatbots).
-
-Today, GPT-4o mini supports text and vision in the API, with support for text, image, video and audio inputs and outputs coming in the future. The model has a context window of 128K tokens and knowledge up to October 2023. Thanks to the improved tokenizer shared with GPT-4o, handling non-English text is now even more cost effective.
-
-GPT-4o mini surpasses GPT-3.5 Turbo and other small models on academic benchmarks across both textual intelligence and multimodal reasoning, and supports the same range of languages as GPT-4o. It also demonstrates strong performance in function calling, which can enable developers to build applications that fetch data or take actions with external systems, and improved long-context performance compared to GPT-3.5 Turbo.
-
-#### Resources
-
-- [OpenAI announcement](https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/) 
-
-### OpenAI o1
-![Model Image](https://github.com//images/modules/marketplace/models/families/openai.svg)
-Usage: `llm -m github/o1`
-
-**Publisher:**  OpenAI 
-
-**Description:**  #### o1 Series Models: Enhanced Reasoning and Problem Solving on Azure
-
-The o1 series models are specifically designed to tackle reasoning and problem-solving tasks with increased focus and capability. These models spend more time processing and understanding the user's request, making them exceptionally strong in areas like science, coding, math and similar fields. For example, o1 can be used by healthcare researchers to annotate cell sequencing data, by physicists to generate complicated mathematical formulas needed for quantum optics, and by developers in all fields to build and execute multi-step workflows.
-
-#### Key Capabilities of the o1 Series
-
-- [New!] o1 adds advanced image analysis capabilities with the new version. Enhance your prompts and context with images for additional insights.
-- Complex Code Generation: Capable of generating algorithms and handling advanced coding tasks to support developers.
-- Advanced Problem Solving: Ideal for comprehensive brainstorming sessions and addressing multifaceted challenges.
-- Complex Document Comparison: Perfect for analyzing contracts, case files, or legal documents to identify subtle differences.
-- Instruction Following and Workflow Management: Particularly effective for managing workflows requiring shorter contexts.
-
-#### Features and properties supported in o1 GA model
-
-- Developer message replaces system message
-- Reasoning effort as in `high`, `medium`, and `low`. It controls whether the model thinks "less" or "more" in terms of applying cognitive reasoning.
-- Vision input, structured outputs, and tools.
-
-#### Model Variants
-
-- `o1`: The most capable model in the o1 series, offering enhanced reasoning abilities. Now generally available.
-- `o1-mini`: A faster and more cost-efficient option in the o1 series, ideal for coding tasks requiring speed and lower resource consumption.
-
-#### Limitations
-
-o1 model does not include all the features available in other models.  
-
 ### OpenAI o1-mini
+
 ![Model Image](https://github.com//images/modules/marketplace/models/families/openai.svg)
+
 Usage: `llm -m github/o1-mini`
 
-**Publisher:**  OpenAI 
+**Publisher:** OpenAI 
 
-**Description:**  #### OpenAI's o1 Series Models: Enhanced Reasoning and Problem Solving on Azure
+**Description:** #### OpenAI's o1 Series Models: Enhanced Reasoning and Problem Solving on Azure
 
 The OpenAI o1 series models are specifically designed to tackle reasoning and problem-solving tasks with increased focus and capability. These models spend more time processing and understanding the user's request, making them exceptionally strong in areas like science, coding, math and similar fields. For example, o1 can be used by healthcare researchers to annotate cell sequencing data, by physicists to generate complicated mathematical formulas needed for quantum optics, and by developers in all fields to build and execute multi-step workflows.
 
@@ -153,9 +207,11 @@ _IMPORTANT: o1-mini model is available for limited access. To try the model in t
 - Instruction Following and Workflow Management: Particularly effective for managing workflows requiring shorter contexts.
 
 #### Model Variants
-
-- o1-preview: The most capable model in the o1 series, offering enhanced reasoning abilities.
-- o1-mini: A faster and more cost-efficient option in the o1 series, ideal for coding tasks requiring speed and lower resource consumption.
+- `o4-mini`: The most efficient reasoning model in the o model series, well suited for agentic solutions. Now generally available.
+- `o3`: The most capable reasoning model in the o model series, and the first one to offer full tools support for agentic solutions. Now generally available.
+- `o3-mini`: A faster and more cost-efficient option in the o3 series, ideal for coding tasks requiring speed and lower resource consumption.
+- `o1`: The most capable model in the o1 series, offering enhanced reasoning abilities. Now generally available.
+- `o1-mini`: A faster and more cost-efficient option in the o1 series, ideal for coding tasks requiring speed and lower resource consumption.
 
 #### Limitations
 
@@ -169,12 +225,14 @@ o1-mini model is currently in preview and do not include some features available
  
 
 ### OpenAI o1-preview
+
 ![Model Image](https://github.com//images/modules/marketplace/models/families/openai.svg)
+
 Usage: `llm -m github/o1-preview`
 
-**Publisher:**  OpenAI 
+**Publisher:** OpenAI 
 
-**Description:**  #### OpenAI's o1 Series Models: Enhanced Reasoning and Problem Solving on Azure
+**Description:** #### OpenAI's o1 Series Models: Enhanced Reasoning and Problem Solving on Azure
 
 The OpenAI o1 series models are specifically designed to tackle reasoning and problem-solving tasks with increased focus and capability. These models spend more time processing and understanding the user's request, making them exceptionally strong in areas like science, coding, math and similar fields. For example, o1 can be used by healthcare researchers to annotate cell sequencing data, by physicists to generate complicated mathematical formulas needed for quantum optics, and by developers in all fields to build and execute multi-step workflows.
 
@@ -205,324 +263,140 @@ o1-preview model is currently in preview and do not include some features availa
 - [Azure OpenAI blog announcement](https://aka.ms/new-models)
  
 
-### OpenAI Text Embedding 3 (large)
+### OpenAI o1
+
 ![Model Image](https://github.com//images/modules/marketplace/models/families/openai.svg)
-Usage: `llm -m github/text-embedding-3-large`
 
-**Publisher:**  OpenAI 
+Usage: `llm -m github/o1`
 
-**Description:**  Text-embedding-3 series models are the latest and most capable embedding model. The text-embedding-3 models offer better average multi-language retrieval performance with the MIRACL benchmark while still maintaining performance for English tasks with the MTEB benchmark. 
+**Publisher:** OpenAI 
 
-### OpenAI Text Embedding 3 (small)
+**Description:** #### o1 Series Models: Enhanced Reasoning and Problem Solving on Azure
+
+The o1 series models are specifically designed to tackle reasoning and problem-solving tasks with increased focus and capability. These models spend more time processing and understanding the user's request, making them exceptionally strong in areas like science, coding, math and similar fields. For example, o1 can be used by healthcare researchers to annotate cell sequencing data, by physicists to generate complicated mathematical formulas needed for quantum optics, and by developers in all fields to build and execute multi-step workflows.
+
+#### Key Capabilities of the o1 Series
+
+- [New!] o1 adds advanced image analysis capabilities with the new version. Enhance your prompts and context with images for additional insights.
+- Complex Code Generation: Capable of generating algorithms and handling advanced coding tasks to support developers.
+- Advanced Problem Solving: Ideal for comprehensive brainstorming sessions and addressing multifaceted challenges.
+- Complex Document Comparison: Perfect for analyzing contracts, case files, or legal documents to identify subtle differences.
+- Instruction Following and Workflow Management: Particularly effective for managing workflows requiring shorter contexts.
+
+#### Features and properties supported in o1 GA model
+
+- Developer message replaces system message
+- Reasoning effort as in `high`, `medium`, and `low`. It controls whether the model thinks "less" or "more" in terms of applying cognitive reasoning.
+- Vision input, structured outputs, and tools.
+
+#### Model Variants
+- `o4-mini`: The most efficient reasoning model in the o model series, well suited for agentic solutions. Now generally available.
+- `o3`: The most capable reasoning model in the o model series, and the first one to offer full tools support for agentic solutions. Now generally available.
+- `o3-mini`: A faster and more cost-efficient option in the o3 series, ideal for coding tasks requiring speed and lower resource consumption.
+- `o1`: The most capable model in the o1 series, offering enhanced reasoning abilities. Now generally available.
+- `o1-mini`: A faster and more cost-efficient option in the o1 series, ideal for coding tasks requiring speed and lower resource consumption.
+
+#### Limitations
+
+o1 model does not include all the features available in other models.  
+
+### OpenAI o3-mini
+
 ![Model Image](https://github.com//images/modules/marketplace/models/families/openai.svg)
-Usage: `llm -m github/text-embedding-3-small`
 
-**Publisher:**  OpenAI 
+Usage: `llm -m github/o3-mini`
 
-**Description:**  Text-embedding-3 series models are the latest and most capable embedding model. The text-embedding-3 models offer better average multi-language retrieval performance with the MIRACL benchmark while still maintaining performance for English tasks with the MTEB benchmark. 
+**Publisher:** OpenAI 
 
-### Phi-3.5-MoE instruct (128k)
-![Model Image](https://github.com//images/modules/marketplace/models/families/microsoft.svg)
-Usage: `llm -m github/Phi-3-5-MoE-instruct`
+**Description:** #### o1 and o3 Series Models: Enhanced Reasoning and Problem Solving on Azure
 
-**Publisher:**  Microsoft 
+The o1 and o3 series models are specifically designed to tackle reasoning and problem-solving tasks with increased focus and capability. These models spend more time processing and understanding the user's request, making them exceptionally strong in areas like science, coding, math and similar fields. For example, o1 can be used by healthcare researchers to annotate cell sequencing data, by physicists to generate complicated mathematical formulas needed for quantum optics, and by developers in all fields to build and execute multi-step workflows.
 
-**Description:**  Phi-3.5-MoE is a lightweight, state-of-the-art open model built upon datasets used for Phi-3 - synthetic data and filtered publicly available documents - with a focus on very high-quality, reasoning dense data. The model supports multilingual and comes with 128K context length (in tokens). The model underwent a rigorous enhancement process, incorporating supervised fine-tuning, proximal policy optimization, and direct preference optimization to ensure precise instruction adherence and robust safety measures.
+#### Key Capabilities of these models
 
-### Resources
-🏡 [Phi-3 Portal](https://azure.microsoft.com/en-us/products/phi-3) <br>
-📰 [Phi-3 Microsoft Blog](https://aka.ms/phi3.5-techblog) <br>
-📖 [Phi-3 Technical Report](https://arxiv.org/abs/2404.14219) <br>
-👩‍🍳 [Phi-3 Cookbook](https://github.com/microsoft/Phi-3CookBook) <br>
+- o1 added advanced image analysis capabilities with the new version. Enhance your prompts and context with images for additional insights.
+- o3-mini follows o1 mini but adds the features supported by o1 like function calling and tools.
+- Complex Code Generation: Capable of generating algorithms and handling advanced coding tasks to support developers.
+- Advanced Problem Solving: Ideal for comprehensive brainstorming sessions and addressing multifaceted challenges.
+- Complex Document Comparison: Perfect for analyzing contracts, case files, or legal documents to identify subtle differences.
+- Instruction Following and Workflow Management: Particularly effective for managing workflows requiring shorter contexts.
 
-### Model Architecture
-Phi-3.5-MoE has 16x3.8B parameters with 6.6B active parameters when using 2 experts. The model is a mixture-of-expert decoder-only Transformer model using the tokenizer with vocabulary size of 32,064.
+#### Features and properties supported in o3-mini model
 
-### Training Data
-This is a static model trained on an offline dataset with 4.9T tokens and a cutoff date October 2023 for publicly available data. Future versions of the tuned models may be released as we improve models.
+- Supports both System message and the new Developer message to improve upgrade experience.
+- Reasoning effort as in `high`, `medium`, and `low`. It controls whether the model thinks "less" or "more" in terms of applying cognitive reasoning.
+- Structured outputs and functions/tools.
+- Context window: 200K, Max Completion Tokens: 100K
+
+#### Model Variants
+- `o4-mini`: The most efficient reasoning model in the o model series, well suited for agentic solutions. Now generally available.
+- `o3`: The most capable reasoning model in the o model series, and the first one to offer full tools support for agentic solutions. Now generally available.
+- `o3-mini`: A faster and more cost-efficient option in the o3 series, ideal for coding tasks requiring speed and lower resource consumption.
+- `o1`: The most capable model in the o1 series, offering enhanced reasoning abilities. Now generally available.
+- `o1-mini`: A faster and more cost-efficient option in the o1 series, ideal for coding tasks requiring speed and lower resource consumption.
+
+#### Limitations
+
+o1 model does not include all the features available in other models.  
+
+### OpenAI o3
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/openai.svg)
+
+Usage: `llm -m github/o3`
+
+**Publisher:** OpenAI 
+
+**Description:** o3 includes significant improvements on quality and safety while supporting the existing features of o1 and delivering comparable or better performance through its integration and support of the newest APIs and reasoning features.   
+
+#### Key capabilities
+
+- **Multiple APIs support:** o3 is available in Responses API and Chat Completions API with Responses API supporting seamless integration with multiple tools and enhanced transparency with the reasoning summary as part of the model output. 
+- **Reasoning summary:** In the Responses API, o3 now supports reasoning summary in its output providing more insights into its thinking process. This enhances the explainability and the effectiveness of the resulting actions and tools that leverage the insights for even better outcomes.
+- **Multimodality:** With enhanced vision analysis capabilities, o3 expands its reasoning capability to process and analyze visual data, extracting valuable insights and generating comprehensive text outputs. This is supported in both Responses API and Chat Completions API.
+- **Full tools support includes parallel tools calling:** o3 is the first reasoning model with full tools support similar to the mainline models including parallel tool calling. Use o3 for the next generation of agentic solutions. This capability is supported in both Responses API and Chat Completions API.
+
+#### Model Variants
+
+- `o4-mini`: The most efficient reasoning model in the o model series, well suited for agentic solutions. Now generally available.
+- `o3`: The most capable reasoning model in the o model series, and the first one to offer full tools support for agentic solutions. Now generally available.
+- `o3-mini`: A faster and more cost-efficient option in the o3 series, ideal for coding tasks requiring speed and lower resource consumption.
+- `o1`: The most capable model in the o1 series, offering enhanced reasoning abilities. Now generally available.
+- `o1-mini`: A faster and more cost-efficient option in the o1 series, ideal for coding tasks requiring speed and lower resource consumption.
  
 
-### Phi-3.5-mini instruct (128k)
-![Model Image](https://github.com//images/modules/marketplace/models/families/microsoft.svg)
-Usage: `llm -m github/Phi-3-5-mini-instruct`
+### OpenAI o4-mini
 
-**Publisher:**  Microsoft 
+![Model Image](https://github.com//images/modules/marketplace/models/families/openai.svg)
 
-**Description:**  Phi-3.5-mini is a lightweight, state-of-the-art open model built upon datasets used for Phi-3 - synthetic data and filtered publicly available websites - with a focus on very high-quality, reasoning dense data. The model belongs to the Phi-3 model family and supports 128K token context length. The model underwent a rigorous enhancement process, incorporating both supervised fine-tuning, proximal policy optimization, and direct preference optimization to ensure precise instruction adherence and robust safety measures.
+Usage: `llm -m github/o4-mini`
 
-### Resources
-🏡 [Phi-3 Portal](https://azure.microsoft.com/en-us/products/phi-3) <br>
-📰 [Phi-3 Microsoft Blog](https://aka.ms/phi3.5-techblog) <br>
-📖 [Phi-3 Technical Report](https://arxiv.org/abs/2404.14219) <br>
-👩‍🍳 [Phi-3 Cookbook](https://github.com/microsoft/Phi-3CookBook) <br>
+**Publisher:** OpenAI 
 
-### Model Architecture
-Phi-3.5-mini has 3.8B parameters and is a dense decoder-only Transformer model using the same tokenizer as Phi-3 Mini. It is a text-only model best suited for prompts using chat format.
+**Description:** o4-mini includes significant improvements on quality and safety while supporting the existing features of o3-mini and delivering comparable or better performance through its integration and support of the newest APIs and reasoning features.   
 
-### Training Data
-Phi-3.5-mini is a static model trained on an offline dataset with 3.4T tokens and a cutoff date October 2023 for publicly available data. Future versions of the tuned models may be released as we improve models. 
+#### Key Capabilities
+- **Multiple APIs support:** o4-mini is available in Responses API and Chat Completions API with Responses API supporting seamless integration with multiple tools and enhanced transparency with the reasoning summary as part of the model output. 
+- **Reasoning summary:** In the Responses API, o4-mini now supports reasoning summary in its output providing more insights into its thinking process. This enhances the explainability and the effectiveness of the resulting actions and tools that leverage the insights for even better outcomes.
+- **Multimodality:** With the addition of vision input capabilities, o4-mini expands its reasoning capability to process and analyze visual data, extracting valuable insights and generating comprehensive text outputs. This is supported in both Responses API and Chat Completions API.
+- **Full tools support includes parallel tools calling:** o4-mini is the first efficient reasoning model with full tools support similar to the mainline models including parallel tool calling. Use o4-mini for the next generation of agentic solutions. This capability is supported in both Responses API and Chat Completions API.
 
-### Phi-3.5-vision instruct (128k)
-![Model Image](https://github.com//images/modules/marketplace/models/families/microsoft.svg)
-Usage: `llm -m github/Phi-3-5-vision-instruct`
-
-**Publisher:**  Microsoft 
-
-**Description:**  Phi-3.5-vision is a lightweight, state-of-the-art open multimodal model built upon datasets which include - synthetic data and filtered publicly available websites - with a focus on very high-quality, reasoning dense data both on text and vision. The model belongs to the Phi-3 model family, and the multimodal version comes with 128K context length (in tokens) it can support. The model underwent a rigorous enhancement process, incorporating both supervised fine-tuning and direct preference optimization to ensure precise instruction adherence and robust safety measures.
-
-### Resources
-🏡 [Phi-3 Portal](https://azure.microsoft.com/en-us/products/phi-3) <br>
-📰 [Phi-3 Microsoft Blog](https://aka.ms/phi3.5-techblog) <br>
-📖 [Phi-3 Technical Report](https://arxiv.org/abs/2404.14219) <br>
-👩‍🍳 [Phi-3 Cookbook](https://github.com/microsoft/Phi-3CookBook) <br>
-
-### Model Summary
-|      |      |
-|------|------|
-| **Architecture** | Phi-3.5-vision has 4.2B parameters and contains image encoder, connector, projector, and Phi-3 Mini language model. |
-| **Inputs** | Text and Image. It’s best suited for prompts using the chat format. |
-| **Context length** | 128K tokens |
-| **GPUs** | 256 A100-80G |
-| **Training time** | 6 days |
-| **Training data** | 500B tokens (vision tokens + text tokens) |
-| **Outputs** | Generated text in response to the input |
-| **Dates** | Trained between July and August 2024 |
-| **Status** | This is a static model trained on an offline text dataset with cutoff date March 15, 2024. Future versions of the tuned models may be released as we improve models. |
-| **Release date** | August 20, 2024 |
-| **License** | MIT |
- 
-
-### Phi-3-medium instruct (128k)
-![Model Image](https://github.com//images/modules/marketplace/models/families/microsoft.svg)
-Usage: `llm -m github/Phi-3-medium-128k-instruct`
-
-**Publisher:**  Microsoft 
-
-**Description:**  The Phi-3-Medium-128K-Instruct is a 14B parameters, lightweight, state-of-the-art open model trained with the Phi-3 datasets that includes both synthetic data and the filtered publicly available websites data with a focus on high-quality and reasoning dense properties.
-The model belongs to the Phi-3 family with the Medium version in two variants 4K and 128K which is the context length (in tokens) that it can support.
-
-The model underwent a post-training process that incorporates both supervised fine-tuning and direct preference optimization for the instruction following and safety measures.
-When assessed against benchmarks testing common sense, language understanding, math, code, long context and logical reasoning, Phi-3-Medium-128K-Instruct showcased a robust and state-of-the-art performance among models of the same-size and next-size-up.
-
-#### Resources
-
-🏡 [Phi-3 Portal](https://azure.microsoft.com/en-us/products/phi-3) <br>
-📰 [Phi-3 Microsoft Blog](https://aka.ms/Phi-3Build2024) <br>
-📖 [Phi-3 Technical Report](https://aka.ms/phi3-tech-report) <br>
-🛠️ [Phi-3 on Azure AI Studio](https://aka.ms/phi3-azure-ai) <br>
-👩‍🍳 [Phi-3 Cookbook](https://github.com/microsoft/Phi-3CookBook) <br>
-
-#### Model Architecture
-
-Phi-3-Medium-128k-Instruct has 14B parameters and is a dense decoder-only Transformer model. The model is fine-tuned with Supervised fine-tuning (SFT) and Direct Preference Optimization (DPO) to ensure alignment with human preferences and safety guidelines.
-
-#### Training Datasets
-
-Our training data includes a wide variety of sources, totaling 4.8 trillion tokens (including 10% multilingual), and is a combination of 
-1) Publicly available documents filtered rigorously for quality, selected high-quality educational data, and code; 
-2) Newly created synthetic, "textbook - like" data for the purpose of teaching math, coding, common sense reasoning, general knowledge of the world (science, daily activities, theory of mind, etc.); 
-3) High quality chat format supervised data covering various topics to reflect human preferences on different aspects such as instruct-following, truthfulness, honesty and helpfulness.
-
-We are focusing on the quality of data that could potentially improve the reasoning ability for the model, and we filter the publicly available documents to contain the correct level of knowledge. As an example, the result of a game in premier league in a particular day might be good training data for frontier models, but we need to remove such information to leave more model capacity for reasoning for the small size models. More details about data can be found in the [Phi-3 Technical Report](https://aka.ms/phi3-tech-report). 
-
-### Phi-3-medium instruct (4k)
-![Model Image](https://github.com//images/modules/marketplace/models/families/microsoft.svg)
-Usage: `llm -m github/Phi-3-medium-4k-instruct`
-
-**Publisher:**  Microsoft 
-
-**Description:**  The Phi-3-Medium-4K-Instruct is a 14B parameters, lightweight, state-of-the-art open model trained with the Phi-3 datasets that includes both synthetic data and the filtered publicly available websites data with a focus on high-quality and reasoning dense properties.
-The model belongs to the Phi-3 family with the Medium version in two variants 4K and 128K which is the context length (in tokens) that it can support.
-
-The model underwent a post-training process that incorporates both supervised fine-tuning and direct preference optimization for the instruction following and safety measures.
-When assessed against benchmarks testing common sense, language understanding, math, code, long context and logical reasoning, Phi-3-Medium-4K-Instruct showcased a robust and state-of-the-art performance among models of the same-size and next-size-up.
-
-#### Resources
-
-🏡 [Phi-3 Portal](https://azure.microsoft.com/en-us/products/phi-3) <br>
-📰 [Phi-3 Microsoft Blog](https://aka.ms/Phi-3Build2024) <br>
-📖 [Phi-3 Technical Report](https://aka.ms/phi3-tech-report) <br>
-🛠️ [Phi-3 on Azure AI Studio](https://aka.ms/phi3-azure-ai) <br>
-👩‍🍳 [Phi-3 Cookbook](https://github.com/microsoft/Phi-3CookBook) <br>
-
-#### Model Architecture
-
-Phi-3-Medium-4K-Instruct has 14B parameters and is a dense decoder-only Transformer model. The model is fine-tuned with Supervised fine-tuning (SFT) and Direct Preference Optimization (DPO) to ensure alignment with human preferences and safety guidelines.
-
-#### Training Datasets
-
-Our training data includes a wide variety of sources, totaling 4.8 trillion tokens (including 10% multilingual), and is a combination of 
-1) Publicly available documents filtered rigorously for quality, selected high-quality educational data, and code; 
-2) Newly created synthetic, "textbook-like" data for the purpose of teaching math, coding, common sense reasoning, general knowledge of the world (science, daily activities, theory of mind, etc.); 
-3) High quality chat format supervised data covering various topics to reflect human preferences on different aspects such as instruct-following, truthfulness, honesty and helpfulness.
-
-We are focusing on the quality of data that could potentially improve the reasoning ability for the model, and we filter the publicly available documents to contain the correct level of knowledge. As an example, the result of a game in premier league in a particular day might be good training data for frontier models, but we need to remove such information to leave more model capacity for reasoning for the small size models. More details about data can be found in the [Phi-3 Technical Report](https://aka.ms/phi3-tech-report). 
-
-### Phi-3-mini instruct (128k)
-![Model Image](https://github.com//images/modules/marketplace/models/families/microsoft.svg)
-Usage: `llm -m github/Phi-3-mini-128k-instruct`
-
-**Publisher:**  Microsoft 
-
-**Description:**  The Phi-3-Mini-128K-Instruct is a 3.8 billion-parameter, lightweight, state-of-the-art open model trained using the Phi-3 datasets.
-This dataset includes both synthetic data and filtered publicly available website data, with an emphasis on high-quality and reasoning-dense properties.
-
-After initial training, the model underwent a post-training process that involved supervised fine-tuning and direct preference optimization to enhance its ability to follow instructions and adhere to safety measures.
-When evaluated against benchmarks that test common sense, language understanding, mathematics, coding, long-term context, and logical reasoning, the Phi-3 Mini-128K-Instruct demonstrated robust and state-of-the-art performance among models with fewer than 13 billion parameters.
-
-#### Resources
-
-🏡 [Phi-3 Portal](https://azure.microsoft.com/en-us/products/phi-3) <br>
-📰 [Phi-3 Microsoft Blog](https://aka.ms/Phi-3Build2024) <br>
-📖 [Phi-3 Technical Report](https://aka.ms/phi3-tech-report) <br>
-🛠️ [Phi-3 on Azure AI Studio](https://aka.ms/phi3-azure-ai) <br>
-👩‍🍳 [Phi-3 Cookbook](https://github.com/microsoft/Phi-3CookBook) <br>
-
-#### Model Architecture
-
-Phi-3 Mini-128K-Instruct has 3.8B parameters and is a dense decoder-only Transformer model. The model is fine-tuned with Supervised fine-tuning (SFT) and Direct Preference Optimization (DPO) to ensure alignment with human preferences and safety guidelines.
-
-#### Training Datasets
-
-Our training data includes a wide variety of sources, totaling 4.9 trillion tokens, and is a combination of 
-1) Publicly available documents filtered rigorously for quality, selected high-quality educational data, and code; 
-2) Newly created synthetic, "textbook - like" data for the purpose of teaching math, coding, common sense reasoning, general knowledge of the world (science, daily activities, theory of mind, etc.); 
-3) High quality chat format supervised data covering various topics to reflect human preferences on different aspects such as instruct-following, truthfulness, honesty and helpfulness.
-
-We are focusing on the quality of data that could potentially improve the reasoning ability for the model, and we filter the publicly available documents to contain the correct level of knowledge. As an example, the result of a game in premier league in a particular day might be good training data for frontier models, but we need to remove such information to leave more model capacity for reasoning for the small size models. More details about data can be found in the [Phi-3 Technical Report](https://aka.ms/phi3-tech-report). 
-
-### Phi-3-mini instruct (4k)
-![Model Image](https://github.com//images/modules/marketplace/models/families/microsoft.svg)
-Usage: `llm -m github/Phi-3-mini-4k-instruct`
-
-**Publisher:**  Microsoft 
-
-**Description:**  The Phi-3-Mini-4K-Instruct is a 3.8B parameters, lightweight, state-of-the-art open model trained with the Phi-3 datasets that includes both synthetic data and the filtered publicly available websites data with a focus on high-quality and reasoning dense properties.
-The model belongs to the Phi-3 family with the Mini version in two variants 4K and 128K which is the context length (in tokens) that it can support.
-
-The model underwent a post-training process that incorporates both supervised fine-tuning and direct preference optimization for the instruction following and safety measures.
-When assessed against benchmarks testing common sense, language understanding, math, code, long context and logical reasoning, Phi-3 Mini-4K-Instruct showcased a robust and state-of-the-art performance among models with less than 13 billion parameters.
-
-#### Resources
-
-🏡 [Phi-3 Portal](https://azure.microsoft.com/en-us/products/phi-3) <br>
-📰 [Phi-3 Microsoft Blog](https://aka.ms/Phi-3Build2024) <br>
-📖 [Phi-3 Technical Report](https://aka.ms/phi3-tech-report) <br>
-🛠️ [Phi-3 on Azure AI Studio](https://aka.ms/phi3-azure-ai) <br>
-👩‍🍳 [Phi-3 Cookbook](https://github.com/microsoft/Phi-3CookBook) <br>
-
-#### Model Architecture
-
-Phi-3 Mini-4K-Instruct has 3.8B parameters and is a dense decoder-only Transformer model. The model is fine-tuned with Supervised fine-tuning (SFT) and Direct Preference Optimization (DPO) to ensure alignment with human preferences and safety guidelines.
-
-#### Training Datasets
-
-Our training data includes a wide variety of sources, totaling 4.9 trillion tokens, and is a combination of 
-1) Publicly available documents filtered rigorously for quality, selected high-quality educational data, and code; 
-2) Newly created synthetic, "textbook - like" data for the purpose of teaching math, coding, common sense reasoning, general knowledge of the world (science, daily activities, theory of mind, etc.); 
-3) High quality chat format supervised data covering various topics to reflect human preferences on different aspects such as instruct-following, truthfulness, honesty and helpfulness.
-
-We are focusing on the quality of data that could potentially improve the reasoning ability for the model, and we filter the publicly available documents to contain the correct level of knowledge. As an example, the result of a game in premier league in a particular day might be good training data for frontier models, but we need to remove such information to leave more model capacity for reasoning for the small size models. More details about data can be found in the [Phi-3 Technical Report](https://aka.ms/phi3-tech-report). 
-
-### Phi-3-small instruct (128k)
-![Model Image](https://github.com//images/modules/marketplace/models/families/microsoft.svg)
-Usage: `llm -m github/Phi-3-small-128k-instruct`
-
-**Publisher:**  Microsoft 
-
-**Description:**  The Phi-3-Small-128K-Instruct is a 7B parameters, lightweight, state-of-the-art open model trained with the Phi-3 datasets that includes both synthetic data and the filtered publicly available websites data with a focus on high-quality and reasoning dense properties. The model supports 128K context length (in tokens).
-
-The model underwent a post-training process that incorporates both supervised fine-tuning and direct preference optimization for the instruction following and safety measures.
-When assessed against benchmarks testing common sense, language understanding, math, code, long context and logical reasoning, Phi-3-Small-128K-Instruct showcased a robust and state-of-the-art performance among models of the same-size and next-size-up.
-
-#### Resources
-
-+ [Phi-3 Microsoft Blog](https://aka.ms/phi3blog-april)
-+ [Phi-3 Technical Report](https://aka.ms/phi3-tech-report)
-
-#### Model Architecture
-
-Phi-3 Small-128K-Instruct has 7B parameters and is a dense decoder-only Transformer model. The model is fine-tuned with Supervised fine-tuning (SFT) and Direct Preference Optimization (DPO) to ensure alignment with human preferences and safety guidelines.
-
-#### Training Datasets
-
-Our training data includes a wide variety of sources, totaling 4.8 trillion tokens (including 10% multilingual), and is a combination of 
-1) Publicly available documents filtered rigorously for quality, selected high-quality educational data, and code; 
-2) Newly created synthetic, “textbook-like” data for the purpose of teaching math, coding, common sense reasoning, general knowledge of the world (science, daily activities, theory of mind, etc.); 
-3) High quality chat format supervised data covering various topics to reflect human preferences on different aspects such as instruct-following, truthfulness, honesty and helpfulness.
-
-We are focusing on the quality of data that could potentially improve the reasoning ability for the model, and we filter the publicly available documents to contain the correct level of knowledge. As an example, the result of a game in premier league in a particular day might be good training data for frontier models, but we need to remove such information to leave more model capacity for reasoning for the small size models. More details about data can be found in the [Phi-3 Technical Report](https://aka.ms/phi3-tech-report). 
-
-### Phi-3-small instruct (8k)
-![Model Image](https://github.com//images/modules/marketplace/models/families/microsoft.svg)
-Usage: `llm -m github/Phi-3-small-8k-instruct`
-
-**Publisher:**  Microsoft 
-
-**Description:**  The Phi-3-Small-8K-Instruct is a 7B parameters, lightweight, state-of-the-art open model trained with the Phi-3 datasets that includes both synthetic data and the filtered publicly available websites data with a focus on high-quality and reasoning dense properties. The model supports 8K context length (in tokens).
-
-The model underwent a post-training process that incorporates both supervised fine-tuning and direct preference optimization for the instruction following and safety measures.
-When assessed against benchmarks testing common sense, language understanding, math, code, long context and logical reasoning, Phi-3-Small-8K-Instruct showcased a robust and state-of-the-art performance among models of the same-size and next-size-up.
-
-#### Resources
-
-🏡 [Phi-3 Portal](https://azure.microsoft.com/en-us/products/phi-3) <br>
-📰 [Phi-3 Microsoft Blog](https://aka.ms/Phi-3Build2024) <br>
-📖 [Phi-3 Technical Report](https://aka.ms/phi3-tech-report) <br>
-🛠️ [Phi-3 on Azure AI Studio](https://aka.ms/phi3-azure-ai) <br>
-👩‍🍳 [Phi-3 Cookbook](https://github.com/microsoft/Phi-3CookBook) <br>
-
-#### Model Architecture
-
-Phi-3 Small-8K-Instruct has 7B parameters and is a dense decoder-only Transformer model. The model is fine-tuned with Supervised fine-tuning (SFT) and Direct Preference Optimization (DPO) to ensure alignment with human preferences and safety guidelines.
-
-#### Training Datasets
-
-Our training data includes a wide variety of sources, totaling 4.8 trillion tokens (including 10% multilingual), and is a combination of 
-1) Publicly available documents filtered rigorously for quality, selected high-quality educational data, and code; 
-2) Newly created synthetic, “textbook-like” data for the purpose of teaching math, coding, common sense reasoning, general knowledge of the world (science, daily activities, theory of mind, etc.); 
-3) High quality chat format supervised data covering various topics to reflect human preferences on different aspects such as instruct-following, truthfulness, honesty and helpfulness.
-
-We are focusing on the quality of data that could potentially improve the reasoning ability for the model, and we filter the publicly available documents to contain the correct level of knowledge. As an example, the result of a game in premier league in a particular day might be good training data for frontier models, but we need to remove such information to leave more model capacity for reasoning for the small size models. More details about data can be found in the [Phi-3 Technical Report](https://aka.ms/phi3-tech-report). 
-
-### Phi-4
-![Model Image](https://github.com//images/modules/marketplace/models/families/microsoft.svg)
-Usage: `llm -m github/Phi-4`
-
-**Publisher:**  Microsoft 
-
-**Description:**  Phi-4 is a state-of-the-art open model built upon a blend of synthetic datasets, data from filtered public domain websites, and acquired academic books and Q&A datasets. The goal of this approach was to ensure that small capable models were trained with data focused on high quality and advanced reasoning.
-
-Phi-4 underwent a rigorous enhancement and alignment process, incorporating both supervised fine-tuning and direct preference optimization to ensure precise instruction adherence and robust safety measures.
-
-For more information, reference the [Phi-4 Technical Report](https://www.microsoft.com/en-us/research/uploads/prod/2024/12/P4TechReport.pdf).
-
-### Model Architecture
-
-Phi-4 is a 14B parameters, dense decoder-only transformer model. 
-
-### Training Data
-
-Our training data is an extension of the data used for Phi-3 and includes a wide variety of sources from:
-
-1. Publicly available documents filtered rigorously for quality, selected high-quality educational data, and code.
-
-2. Newly created synthetic, "textbook-like" data for the purpose of teaching math, coding, common sense reasoning, general knowledge of the world (science, daily activities, theory of mind, etc.).
-
-3. Acquired academic books and Q&A datasets.
-
-4. High quality chat format supervised data covering various topics to reflect human preferences on different aspects such as instruct-following, truthfulness, honesty and helpfulness.
-
-Multilingual data constitutes about 8% of our overall data. We are focusing on the quality of data that could potentially improve the reasoning ability for the model, and we filter the publicly available documents to contain the correct level of knowledge.
- 
+#### Model Variants
+- `o4-mini`: The most efficient reasoning model in the o model series, well suited for agentic solutions. Now generally available.
+- `o3`: The most capable reasoning model in the o model series, and the first one to offer full tools support for agentic solutions. Now generally available.
+- `o3-mini`: A faster and more cost-efficient option in the o3 series, ideal for coding tasks requiring speed and lower resource consumption.
+- `o1`: The most capable model in the o1 series, offering enhanced reasoning abilities. Now generally available.
+- `o1-mini`: A faster and more cost-efficient option in the o1 series, ideal for coding tasks requiring speed and lower resource consumption. 
 
 ### AI21 Jamba 1.5 Large
+
 ![Model Image](https://github.com//images/modules/marketplace/models/families/ai21 labs.svg)
+
 Usage: `llm -m github/AI21-Jamba-1-5-Large`
 
-**Publisher:**  AI21 Labs 
+**Publisher:** AI21 Labs 
 
-**Description:**  Jamba 1.5 Large is a state-of-the-art, hybrid SSM-Transformer instruction following foundation model. It's a Mixture-of-Expert model with 94B total parameters and 398B active parameters. The Jamba family of models are the most powerful & efficient long-context models on the market, offering a 256K context window, the longest available.. For long context input, they deliver up to 2.5X faster inference than leading models of comparable sizes. Jamba supports function calling/tool use, structured output (JSON), and grounded generation with citation mode and documents API. Jamba officially supports English, French, Spanish, Portuguese, German, Arabic and Hebrew, but can also work in many other languages.
+**Description:** Jamba 1.5 Large is a state-of-the-art, hybrid SSM-Transformer instruction following foundation model. It's a Mixture-of-Expert model with 94B total parameters and 398B active parameters. The Jamba family of models are the most powerful & efficient long-context models on the market, offering a 256K context window, the longest available.. For long context input, they deliver up to 2.5X faster inference than leading models of comparable sizes. Jamba supports function calling/tool use, structured output (JSON), and grounded generation with citation mode and documents API. Jamba officially supports English, French, Spanish, Portuguese, German, Arabic and Hebrew, but can also work in many other languages.
 
 **Model Developer Name**: Jamba 1.5 Large
 
@@ -554,12 +428,14 @@ Jamba 1.5 Large was trained in Q3 2024 with data covering through early March 20
 | **Jamba 1.5 Large**  | 398B (94B active)  | 256K                | 
 
 ### AI21 Jamba 1.5 Mini
+
 ![Model Image](https://github.com//images/modules/marketplace/models/families/ai21 labs.svg)
+
 Usage: `llm -m github/AI21-Jamba-1-5-Mini`
 
-**Publisher:**  AI21 Labs 
+**Publisher:** AI21 Labs 
 
-**Description:**  Jamba 1.5 Mini is a state-of-the-art, hybrid SSM-Transformer instruction following foundation model. It's a Mixture-of-Expert model with 52B total parameters and 12B active parameters. The Jamba family of models are the most powerful & efficient long-context models on the market, offering a 256K context window, the longest available.. For long context input, they deliver up to 2.5X faster inference than leading models of comparable sizes. Jamba supports function calling/tool use, structured output (JSON), and grounded generation with citation mode and documents API. Jamba officially supports English, French, Spanish, Portuguese, German, Arabic and Hebrew, but can also work in many other languages.
+**Description:** Jamba 1.5 Mini is a state-of-the-art, hybrid SSM-Transformer instruction following foundation model. It's a Mixture-of-Expert model with 52B total parameters and 12B active parameters. The Jamba family of models are the most powerful & efficient long-context models on the market, offering a 256K context window, the longest available.. For long context input, they deliver up to 2.5X faster inference than leading models of comparable sizes. Jamba supports function calling/tool use, structured output (JSON), and grounded generation with citation mode and documents API. Jamba officially supports English, French, Spanish, Portuguese, German, Arabic and Hebrew, but can also work in many other languages.
 
 **Model Developer Name**: AI21 Labs
 
@@ -584,76 +460,15 @@ Jamba 1.5 Mini was trained in Q3 2024 with data covering through early March 202
 | **Jamba 1.5 Mini**   | 52B (12B active)   | 256K                |
 | **Jamba 1.5 Large**  | 398B (94B active)  | 256K                | 
 
-### Codestral 25.01
-![Model Image](https://github.com//images/modules/marketplace/models/families/mistral ai.svg)
-Usage: `llm -m github/Codestral-2501`
-
-**Publisher:**  Mistral AI 
-
-**Description:**  
-Codestral 25.01 is explicitly designed for code generation tasks. It helps developers write and interact with code through a shared instruction and completion API endpoint. As it masters code and can also converse in a variety of languages, it can be used to design advanced AI applications for software developers.
-
-A model fluent in 80+ programming languages including Python, Java, C, C++, JavaScript, and Bash. It also performs well on more specific ones like Swift and Fortran. 
-Improve developers productivity and reduce errors: it can complete coding functions, write tests, and complete any partial code using a fill-in-the-middle mechanism. 
-
-**New standard on the performance/latency space with a 256k context window.**
-
-#### Use-cases
-
-- _Code generation_: code completion, suggestions, translation
-- _Code understanding and documentation_: code summarization and explanation
-- _Code quality_: code review, refactoring, bug fixing and test case generation
-- _Code generation with fill-in-the-middle (FIM) completion_: users can define the starting point of the code using a prompt, and the ending point of the code using an optional suffix and an optional stop. The Codestral model will then generate the code that fits in between, making it ideal for tasks that require a specific piece of code to be generated.  
-
-### Cohere Command R
-![Model Image](https://github.com//images/modules/marketplace/models/families/cohere.svg)
-Usage: `llm -m github/Cohere-command-r`
-
-**Publisher:**  Cohere 
-
-**Description:**  Command R is a highly performant generative large language model, optimized for a variety of use cases including reasoning, summarization, and question answering. 
-
-The model is optimized to perform well in the following languages: English, French, Spanish, Italian, German, Brazilian Portuguese, Japanese, Korean, Simplified Chinese, and Arabic.
-
-Pre-training data additionally included the following 13 languages: Russian, Polish, Turkish, Vietnamese, Dutch, Czech, Indonesian, Ukrainian, Romanian, Greek, Hindi, Hebrew, Persian.
-
-#### Resources
-
-For full details of this model, [release blog post](https://aka.ms/cohere-blog).
-
-#### Model Architecture
-
-This is an auto-regressive language model that uses an optimized transformer architecture. After pretraining, this model uses supervised fine-tuning (SFT) and preference training to align model behavior to human preferences for helpfulness and safety.
-
-### Tool use capabilities
-
-Command R has been specifically trained with conversational tool use capabilities. These have been trained into the model via a mixture of supervised fine-tuning and preference fine-tuning, using a specific prompt template. Deviating from this prompt template will likely reduce performance, but we encourage experimentation.
-
-Command R's tool use functionality takes a conversation as input (with an optional user-system preamble), along with a list of available tools. The model will then generate a json-formatted list of actions to execute on a subset of those tools. Command R may use one of its supplied tools more than once.
-
-The model has been trained to recognise a special directly_answer tool, which it uses to indicate that it doesn't want to use any of its other tools. The ability to abstain from calling a specific tool can be useful in a range of situations, such as greeting a user, or asking clarifying questions. We recommend including the directly_answer tool, but it can be removed or renamed if required.
-
-### Grounded Generation and RAG Capabilities
-
-Command R has been specifically trained with grounded generation capabilities. This means that it can generate responses based on a list of supplied document snippets, and it will include grounding spans (citations) in its response indicating the source of the information. This can be used to enable behaviors such as grounded summarization and the final step of Retrieval Augmented Generation (RAG).This behavior has been trained into the model via a mixture of supervised fine-tuning and preference fine-tuning, using a specific prompt template. Deviating from this prompt template may reduce performance, but we encourage experimentation.
-
-Command R's grounded generation behavior takes a conversation as input (with an optional user-supplied system preamble, indicating task, context and desired output style), along with a list of retrieved document snippets. The document snippets should be chunks, rather than long documents, typically around 100-400 words per chunk. Document snippets consist of key-value pairs. The keys should be short descriptive strings, the values can be text or semi-structured.
-
-By default, Command R will generate grounded responses by first predicting which documents are relevant, then predicting which ones it will cite, then generating an answer. Finally, it will then insert grounding spans into the answer. See below for an example. This is referred to as accurate grounded generation.
-
-The model is trained with a number of other answering modes, which can be selected by prompt changes . A fast citation mode is supported in the tokenizer, which will directly generate an answer with grounding spans in it, without first writing the answer out in full. This sacrifices some grounding accuracy in favor of generating fewer tokens.
-
-### Code Capabilities
-
-Command R has been optimized to interact with your code, by requesting code snippets, code explanations, or code rewrites. It might not perform well out-of-the-box for pure code completion. For better performance, we also recommend using a low temperature (and even greedy decoding) for code-generation related instructions. 
-
 ### Cohere Command R 08-2024
+
 ![Model Image](https://github.com//images/modules/marketplace/models/families/cohere.svg)
+
 Usage: `llm -m github/Cohere-command-r-08-2024`
 
-**Publisher:**  Cohere 
+**Publisher:** Cohere 
 
-**Description:**  Command R 08-2024  is a highly performant generative large language model, optimized for a variety of use cases including reasoning, summarization, and question answering. 
+**Description:** Command R 08-2024  is a highly performant generative large language model, optimized for a variety of use cases including reasoning, summarization, and question answering. 
 
 The model is optimized to perform well in the following languages: English, French, Spanish, Italian, German, Brazilian Portuguese, Japanese, Korean, Simplified Chinese, and Arabic.
 
@@ -685,13 +500,55 @@ Command R 08-2024 has been optimized to interact with your code, by requesting c
 ### Structured Outputs
 Structured Outputs ensures outputs from Cohere’s Command R 08-2024 model adheres to a user-defined response format. It supports JSON response format, including user-defined JSON schemas. This enables developers to reliably and consistently generate model outputs for programmatic usage and reliable function calls. Some examples include extracting data, formulating queries, and displaying model outputs in the UI. 
 
-### Cohere Command R+
+### Cohere Command R+ 08-2024
+
 ![Model Image](https://github.com//images/modules/marketplace/models/families/cohere.svg)
+
+Usage: `llm -m github/Cohere-command-r-plus-08-2024`
+
+**Publisher:** Cohere 
+
+**Description:** Command R+ 08-2024 is a highly performant generative large language model, optimized for a variety of use cases including reasoning, summarization, and question answering. 
+
+The model is optimized to perform well in the following languages: English, French, Spanish, Italian, German, Brazilian Portuguese, Japanese, Korean, Simplified Chinese, and Arabic.
+
+Pre-training data additionally included the following 13 languages: Russian, Polish, Turkish, Vietnamese, Dutch, Czech, Indonesian, Ukrainian, Romanian, Greek, Hindi, Hebrew, Persian.
+
+#### Model Architecture
+This is an auto-regressive language model that uses an optimized transformer architecture. After pretraining, this model uses supervised fine-tuning (SFT) and preference training to align model behavior to human preferences for helpfulness and safety.
+
+### Tool use capabilities
+Command R+ 08-2024 has been specifically trained with conversational tool use capabilities. These have been trained into the model via a mixture of supervised fine-tuning and preference fine-tuning, using a specific prompt template. Deviating from this prompt template will likely reduce performance, but we encourage experimentation.
+
+Command R+’s tool use functionality takes a conversation as input (with an optional user-system preamble), along with a list of available tools. The model will then generate a json-formatted list of actions to execute on a subset of those tools. Command R+ may use one of its supplied tools more than once.
+
+The model has been trained to recognise a special directly_answer tool, which it uses to indicate that it doesn’t want to use any of its other tools. The ability to abstain from calling a specific tool can be useful in a range of situations, such as greeting a user, or asking clarifying questions. We recommend including the directly_answer tool, but it can be removed or renamed if required.
+
+### Grounded Generation and RAG Capabilities
+
+Command R+ 08-2024 has been specifically trained with grounded generation capabilities. This means that it can generate responses based on a list of supplied document snippets, and it will include grounding spans (citations) in its response indicating the source of the information. This can be used to enable behaviors such as grounded summarization and the final step of Retrieval Augmented Generation (RAG).This behavior has been trained into the model via a mixture of supervised fine-tuning and preference fine-tuning, using a specific prompt template. Deviating from this prompt template may reduce performance, but we encourage experimentation.
+
+Command R+’s grounded generation behavior takes a conversation as input (with an optional user-supplied system preamble, indicating task, context and desired output style), along with a list of retrieved document snippets. The document snippets should be chunks, rather than long documents, typically around 100-400 words per chunk. Document snippets consist of key-value pairs. The keys should be short descriptive strings, the values can be text or semi-structured.
+
+By default, Command R+ will generate grounded responses by first predicting which documents are relevant, then predicting which ones it will cite, then generating an answer. Finally, it will then insert grounding spans into the answer. See below for an example. This is referred to as accurate grounded generation.
+
+The model is trained with a number of other answering modes, which can be selected by prompt changes . A fast citation mode is supported in the tokenizer, which will directly generate an answer with grounding spans in it, without first writing the answer out in full. This sacrifices some grounding accuracy in favor of generating fewer tokens.
+
+### Code Capabilities
+Command R+ 08-2024 has been optimized to interact with your code, by requesting code snippets, code explanations, or code rewrites. It might not perform well out-of-the-box for pure code completion. For better performance, we also recommend using a low temperature (and even greedy decoding) for code-generation related instructions.
+
+### Structured Outputs
+Structured Outputs ensures outputs from Cohere’s Command R+ 08-2024 model adheres to a user-defined response format. It supports JSON response format, including user-defined JSON schemas. This enables developers to reliably and consistently generate model outputs for programmatic usage and reliable function calls. Some examples include extracting data, formulating queries, and displaying model outputs in the UI. 
+
+### Cohere Command R+
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/cohere.svg)
+
 Usage: `llm -m github/Cohere-command-r-plus`
 
-**Publisher:**  Cohere 
+**Publisher:** Cohere 
 
-**Description:**  Command R+ is a highly performant generative large language model, optimized for a variety of use cases including reasoning, summarization, and question answering. 
+**Description:** Command R+ is a highly performant generative large language model, optimized for a variety of use cases including reasoning, summarization, and question answering. 
 
 The model is optimized to perform well in the following languages: English, French, Spanish, Italian, German, Brazilian Portuguese, Japanese, Korean, Simplified Chinese, and Arabic.
 
@@ -727,67 +584,91 @@ The model is trained with a number of other answering modes, which can be select
 
 Command R+ has been optimized to interact with your code, by requesting code snippets, code explanations, or code rewrites. It might not perform well out-of-the-box for pure code completion. For better performance, we also recommend using a low temperature (and even greedy decoding) for code-generation related instructions. 
 
-### Cohere Command R+ 08-2024
+### Cohere Command R
+
 ![Model Image](https://github.com//images/modules/marketplace/models/families/cohere.svg)
-Usage: `llm -m github/Cohere-command-r-plus-08-2024`
 
-**Publisher:**  Cohere 
+Usage: `llm -m github/Cohere-command-r`
 
-**Description:**  Command R+ 08-2024 is a highly performant generative large language model, optimized for a variety of use cases including reasoning, summarization, and question answering. 
+**Publisher:** Cohere 
+
+**Description:** Command R is a highly performant generative large language model, optimized for a variety of use cases including reasoning, summarization, and question answering. 
 
 The model is optimized to perform well in the following languages: English, French, Spanish, Italian, German, Brazilian Portuguese, Japanese, Korean, Simplified Chinese, and Arabic.
 
 Pre-training data additionally included the following 13 languages: Russian, Polish, Turkish, Vietnamese, Dutch, Czech, Indonesian, Ukrainian, Romanian, Greek, Hindi, Hebrew, Persian.
 
+#### Resources
+
+For full details of this model, [release blog post](https://aka.ms/cohere-blog).
+
 #### Model Architecture
+
 This is an auto-regressive language model that uses an optimized transformer architecture. After pretraining, this model uses supervised fine-tuning (SFT) and preference training to align model behavior to human preferences for helpfulness and safety.
 
 ### Tool use capabilities
-Command R+ 08-2024 has been specifically trained with conversational tool use capabilities. These have been trained into the model via a mixture of supervised fine-tuning and preference fine-tuning, using a specific prompt template. Deviating from this prompt template will likely reduce performance, but we encourage experimentation.
 
-Command R+’s tool use functionality takes a conversation as input (with an optional user-system preamble), along with a list of available tools. The model will then generate a json-formatted list of actions to execute on a subset of those tools. Command R+ may use one of its supplied tools more than once.
+Command R has been specifically trained with conversational tool use capabilities. These have been trained into the model via a mixture of supervised fine-tuning and preference fine-tuning, using a specific prompt template. Deviating from this prompt template will likely reduce performance, but we encourage experimentation.
 
-The model has been trained to recognise a special directly_answer tool, which it uses to indicate that it doesn’t want to use any of its other tools. The ability to abstain from calling a specific tool can be useful in a range of situations, such as greeting a user, or asking clarifying questions. We recommend including the directly_answer tool, but it can be removed or renamed if required.
+Command R's tool use functionality takes a conversation as input (with an optional user-system preamble), along with a list of available tools. The model will then generate a json-formatted list of actions to execute on a subset of those tools. Command R may use one of its supplied tools more than once.
+
+The model has been trained to recognise a special directly_answer tool, which it uses to indicate that it doesn't want to use any of its other tools. The ability to abstain from calling a specific tool can be useful in a range of situations, such as greeting a user, or asking clarifying questions. We recommend including the directly_answer tool, but it can be removed or renamed if required.
 
 ### Grounded Generation and RAG Capabilities
 
-Command R+ 08-2024 has been specifically trained with grounded generation capabilities. This means that it can generate responses based on a list of supplied document snippets, and it will include grounding spans (citations) in its response indicating the source of the information. This can be used to enable behaviors such as grounded summarization and the final step of Retrieval Augmented Generation (RAG).This behavior has been trained into the model via a mixture of supervised fine-tuning and preference fine-tuning, using a specific prompt template. Deviating from this prompt template may reduce performance, but we encourage experimentation.
+Command R has been specifically trained with grounded generation capabilities. This means that it can generate responses based on a list of supplied document snippets, and it will include grounding spans (citations) in its response indicating the source of the information. This can be used to enable behaviors such as grounded summarization and the final step of Retrieval Augmented Generation (RAG).This behavior has been trained into the model via a mixture of supervised fine-tuning and preference fine-tuning, using a specific prompt template. Deviating from this prompt template may reduce performance, but we encourage experimentation.
 
-Command R+’s grounded generation behavior takes a conversation as input (with an optional user-supplied system preamble, indicating task, context and desired output style), along with a list of retrieved document snippets. The document snippets should be chunks, rather than long documents, typically around 100-400 words per chunk. Document snippets consist of key-value pairs. The keys should be short descriptive strings, the values can be text or semi-structured.
+Command R's grounded generation behavior takes a conversation as input (with an optional user-supplied system preamble, indicating task, context and desired output style), along with a list of retrieved document snippets. The document snippets should be chunks, rather than long documents, typically around 100-400 words per chunk. Document snippets consist of key-value pairs. The keys should be short descriptive strings, the values can be text or semi-structured.
 
-By default, Command R+ will generate grounded responses by first predicting which documents are relevant, then predicting which ones it will cite, then generating an answer. Finally, it will then insert grounding spans into the answer. See below for an example. This is referred to as accurate grounded generation.
+By default, Command R will generate grounded responses by first predicting which documents are relevant, then predicting which ones it will cite, then generating an answer. Finally, it will then insert grounding spans into the answer. See below for an example. This is referred to as accurate grounded generation.
 
 The model is trained with a number of other answering modes, which can be selected by prompt changes . A fast citation mode is supported in the tokenizer, which will directly generate an answer with grounding spans in it, without first writing the answer out in full. This sacrifices some grounding accuracy in favor of generating fewer tokens.
 
 ### Code Capabilities
-Command R+ 08-2024 has been optimized to interact with your code, by requesting code snippets, code explanations, or code rewrites. It might not perform well out-of-the-box for pure code completion. For better performance, we also recommend using a low temperature (and even greedy decoding) for code-generation related instructions.
 
-### Structured Outputs
-Structured Outputs ensures outputs from Cohere’s Command R+ 08-2024 model adheres to a user-defined response format. It supports JSON response format, including user-defined JSON schemas. This enables developers to reliably and consistently generate model outputs for programmatic usage and reliable function calls. Some examples include extracting data, formulating queries, and displaying model outputs in the UI. 
+Command R has been optimized to interact with your code, by requesting code snippets, code explanations, or code rewrites. It might not perform well out-of-the-box for pure code completion. For better performance, we also recommend using a low temperature (and even greedy decoding) for code-generation related instructions. 
 
-### Cohere Embed v3 English
+### Cohere Command A
+
 ![Model Image](https://github.com//images/modules/marketplace/models/families/cohere.svg)
-Usage: `llm -m github/Cohere-embed-v3-english`
 
-**Publisher:**  Cohere 
+Usage: `llm -m github/cohere-command-a`
 
-**Description:**  Cohere Embed English is the market’s leading multimodal (text, image) representation model used for semantic search, retrieval-augmented generation (RAG), classification, and clustering. Embed English has top performance on the HuggingFace MTEB benchmark and performs well on a variety of industries such as Finance, Legal, and General-Purpose Corpora.The model was trained on nearly 1B English training pairs. 
+**Publisher:** Cohere 
 
-### Cohere Embed v3 Multilingual
-![Model Image](https://github.com//images/modules/marketplace/models/families/cohere.svg)
-Usage: `llm -m github/Cohere-embed-v3-multilingual`
+**Description:** Command A is Cohere's flagship generative model, optimized for companies that require fast, secure, and highly-performant AI solutions. Command A delivers maximum performance with minimal hardware costs when compared to leading proprietary and open-weights models, such as GPT-4o and DeepSeek-V3. For private deployments, Command A excels on business-critical agentic and multilingual tasks, and can be deployed on just 2 GPUs, compared to competitive models that typically require as many as 32 GPUs.
 
-**Publisher:**  Cohere 
+Command A supports 23 languages and comes with 256k context length (in tokens). In head-to-head human evaluation across business, STEM, and coding tasks, Command A matches or outperforms its larger and slower competitors – while offering superior throughput and increased efficiency. Command A supports 23 languages and comes with 256k context length (in tokens).    
 
-**Description:**  Cohere Embed Multilingual is the market’s leading multimodal (text, image) representation model used for semantic search, retrieval-augmented generation (RAG), classification, and clustering. Embed Multilingual supports 100+ languages and can be used to search within a language (e.g., search with a French query on French documents) and across languages (e.g., search with an English query on Chinese documents). This model was trained on nearly 1B English training pairs and nearly 0.5B Non-English training pairs from 100+ languages. 
+### JAIS 30b Chat
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/core42.svg)
+
+Usage: `llm -m github/jais-30b-chat`
+
+**Publisher:** Core42 
+
+**Description:** JAIS 30b Chat from Core42 is an auto-regressive bi-lingual LLM for **Arabic** & **English** with state-of-the-art capabilities in Arabic.
+
+#### Model Architecture
+
+The model is based on transformer-based decoder-only (GPT-3) architecture and uses SwiGLU non-linearity. It uses LiBi position embeddings, enabling the model to extrapolate to long sequence lengths, providing improved context length handling. The tuned versions use supervised fine-tuning (SFT).
+
+#### Training Datasets
+ 
+**Overview:** The pretraining data for Jais-30b is a total of 1.63 T tokens consisting of English, Arabic, and code. Jais-30b-chat model is finetuned with both Arabic and English prompt-response pairs. We extended our finetuning datasets used for jais-13b-chat which included a wide range of instructional data across various domains. We cover a wide range of common tasks including question answering, code generation, and reasoning over textual content. To enhance performance in Arabic, we developed an in-house Arabic dataset as well as translating some open-source English instructions into Arabic.
+
+**Data Freshness:** The pretraining data has a cutoff of December 2022, with some tuning data being more recent, up to October 2023. 
 
 ### DeepSeek-R1
+
 ![Model Image](https://github.com//images/modules/marketplace/models/families/deepseek.svg)
+
 Usage: `llm -m github/DeepSeek-R1`
 
-**Publisher:**  DeepSeek 
+**Publisher:** DeepSeek 
 
-**Description:**  *Learn more: \[[original model announcement](https://github.com/deepseek-ai/DeepSeek-R1/tree/main)\]*
+**Description:** *Learn more: \[[original model announcement](https://github.com/deepseek-ai/DeepSeek-R1/tree/main)\]*
 
 DeepSeek-R1 excels at reasoning tasks using a step-by-step training process, such as language, scientific reasoning, and coding tasks. It features 671B total parameters with 37B active parameters, and 128k context length.
 
@@ -799,20 +680,51 @@ We recommend adhering to the following configurations when utilizing the DeepSee
 
 - Avoid adding a system prompt; all instructions should be contained within the user prompt.
 - For mathematical problems, it is advisable to include a directive in your prompt such as: "Please reason step by step, and put your final answer within \boxed{}."
-- When evaluating model performance, it is recommended to conduct multiple tests and average the results.
+- When evaluating model performance, it is recommended to conduct multiple tests and average the results. 
 
-### Additional recommendations
+### DeepSeek-V3-0324
 
-The model's reasoning output (contained within the `<think>` tags) may contain more harmful content than the model's final response. Consider how your application will use or display the reasoning output; you may want to suppress the reasoning output in a production setting.
- 
+![Model Image](https://github.com//images/modules/marketplace/models/families/deepseek.svg)
+
+Usage: `llm -m github/DeepSeek-V3-0324`
+
+**Publisher:** DeepSeek 
+
+**Description:** *Learn more: \[[original model announcement](https://huggingface.co/deepseek-ai/DeepSeek-V3-0324)\]*
+DeepSeek-V3-0324 is a Mixture-of-Experts (MoE) language model with 671 billion total parameters, with 37 billion activated for each token. It adopts Multi-head Latent Attention (MLA) and DeepSeekMoE architectures, which were thoroughly validated in DeepSeek-V2. Additionally, DeepSeek-V3-0324 pioneers an auxiliary-loss-free strategy for load balancing and sets a multi-token prediction training objective for enhanced performance. Notably, DeepSeek-V3-0324 shows significant improvements over its predecessor, DeepSeek-V3, in several key aspects.
+
+**Reasoning Capabilities**
+
+- Significant improvements in benchmark performance:
+    - MMLU-Pro: 75.9 → 81.2 (+5.3)
+    - GPQA: 59.1 → 68.4 (+9.3)
+    - AIME: 39.6 → 59.4 (+19.8)
+    - LiveCodeBench: 39.2 → 49.2 (+10.0)
+
+- Front-End Web Development
+    - Improved the executability of the code
+    - More aesthetically pleasing web pages and game front-ends
+- Chinese Writing Proficiency
+    - Enhanced style and content quality:
+       - Aligned with the R1 writing style
+       - Better quality in medium-to-long-form writing
+    - Feature Enhancements
+        - Improved multi-turn interactive rewriting
+        - Optimized translation quality and letter writing
+- Chinese Search Capabilities
+    - Enhanced report analysis requests with more detailed outputs
+- Function Calling Improvements
+    - Increased accuracy in Function Calling, fixing issues from previous V3 versions 
 
 ### Llama-3.2-11B-Vision-Instruct
+
 ![Model Image](https://github.com//images/modules/marketplace/models/families/meta.svg)
+
 Usage: `llm -m github/Llama-3-2-11B-Vision-Instruct`
 
-**Publisher:**  Meta 
+**Publisher:** Meta 
 
-**Description:**  The Llama 3.2-Vision collection of multimodal large language models (LLMs) is a collection of pretrained and instruction-tuned image reasoning generative models in 11B and 90B sizes (text \+ images in / text out). The Llama 3.2-Vision instruction-tuned models are optimized for visual recognition, image reasoning, captioning, and answering general questions about an image. The models outperform many of the available open source and closed multimodal models on common industry benchmarks.
+**Description:** The Llama 3.2-Vision collection of multimodal large language models (LLMs) is a collection of pretrained and instruction-tuned image reasoning generative models in 11B and 90B sizes (text \+ images in / text out). The Llama 3.2-Vision instruction-tuned models are optimized for visual recognition, image reasoning, captioning, and answering general questions about an image. The models outperform many of the available open source and closed multimodal models on common industry benchmarks.
 
 **Model Developer**: Meta
 
@@ -837,12 +749,14 @@ Developers may fine-tune Llama 3.2 models for languages beyond these supported l
  
 
 ### Llama-3.2-90B-Vision-Instruct
+
 ![Model Image](https://github.com//images/modules/marketplace/models/families/meta.svg)
+
 Usage: `llm -m github/Llama-3-2-90B-Vision-Instruct`
 
-**Publisher:**  Meta 
+**Publisher:** Meta 
 
-**Description:**  The Llama 3.2-Vision collection of multimodal large language models (LLMs) is a collection of pretrained and instruction-tuned image reasoning generative models in 11B and 90B sizes (text \+ images in / text out). The Llama 3.2-Vision instruction-tuned models are optimized for visual recognition, image reasoning, captioning, and answering general questions about an image. The models outperform many of the available open source and closed multimodal models on common industry benchmarks.
+**Description:** The Llama 3.2-Vision collection of multimodal large language models (LLMs) is a collection of pretrained and instruction-tuned image reasoning generative models in 11B and 90B sizes (text \+ images in / text out). The Llama 3.2-Vision instruction-tuned models are optimized for visual recognition, image reasoning, captioning, and answering general questions about an image. The models outperform many of the available open source and closed multimodal models on common industry benchmarks.
 
 **Model Developer**: Meta
 
@@ -869,12 +783,14 @@ Developers may fine-tune Llama 3.2 models for languages beyond these supported l
  
 
 ### Llama-3.3-70B-Instruct
+
 ![Model Image](https://github.com//images/modules/marketplace/models/families/meta.svg)
+
 Usage: `llm -m github/Llama-3-3-70B-Instruct`
 
-**Publisher:**  Meta 
+**Publisher:** Meta 
 
-**Description:**  The Meta Llama 3.3 multilingual large language model (LLM) is a pretrained and instruction tuned generative model in 70B (text in/text out). The Llama 3.3 instruction tuned text only model is optimized for multilingual dialogue use cases and outperform many of the available open source and closed chat models on common industry benchmarks.
+**Description:** The Meta Llama 3.3 multilingual large language model (LLM) is a pretrained and instruction tuned generative model in 70B (text in/text out). The Llama 3.3 instruction tuned text only model is optimized for multilingual dialogue use cases and outperform many of the available open source and closed chat models on common industry benchmarks.
 
 **Built with Llama**
 
@@ -887,13 +803,121 @@ Usage: `llm -m github/Llama-3-3-70B-Instruct`
 *Token counts refer to pretraining data only. All model versions use Grouped-Query Attention (GQA) for improved inference scalability.
  
 
-### Meta-Llama-3.1-405B-Instruct
+### Llama 4 Maverick 17B 128E Instruct FP8
+
 ![Model Image](https://github.com//images/modules/marketplace/models/families/meta.svg)
+
+Usage: `llm -m github/Llama-4-Maverick-17B-128E-Instruct-FP8`
+
+**Publisher:** Meta 
+
+**Description:** The Llama 4 collection of models are natively multimodal AI models that enable text and multimodal experiences. These models leverage a mixture-of-experts architecture to offer industry-leading performance in text and image understanding.
+
+These Llama 4 models mark the beginning of a new era for the Llama ecosystem. This release includes two efficient models in the Llama 4 series, Llama 4 Scout, a 17 billion parameter model with 16 experts, and Llama 4 Maverick, a 17 billion parameter model with 128 experts.
+
+**Model developer**: Meta
+
+**Model Architecture:**  The Llama 4 models are auto-regressive language models that use a mixture-of-experts (MoE) architecture and incorporate early fusion for native multimodality.
+
+| Model Name | Training Data | Params | Input modalities | Output modalities | Context length | Token count | Knowledge cutoff |
+| :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
+| Llama 4 Scout (17Bx16E) | A mix of publicly available, licensed data and information from Meta’s products and services. This includes publicly shared posts from Instagram and Facebook and people’s interactions with Meta AI. Learn more in our [Privacy Center](https://www.facebook.com/privacy/guide/genai/). | 17B (Activated) 109B (Total) | Multilingual text and image | Multilingual text and code | 10M | \~40T | August 2024 |
+| Llama 4 Maverick (17Bx128E) |  | 17B (Activated)  400B (Total) | Multilingual text and image | Multilingual text and code | 1M | \~22T | August 2024 |
+
+**Supported languages:** Arabic, English, French, German, Hindi, Indonesian, Italian, Portuguese, Spanish, Tagalog, Thai, and Vietnamese.
+
+**Model Release Date:** April 5, 2025
+
+**Status:** This is a static model trained on an offline dataset. Future versions of the tuned models may be released as Meta improves model behavior with community feedback.
+
+**License Notice:**
+This is a Llama 4 multimodal modal. Under the License and AUP, the rights granted under Section 1(a) of the Llama 4 Community License Agreement are not granted to any individual domiciled in, or any company with a principal place of business in, the European Union. This restriction does not apply to end users of a product or service that incorporates any multimodal models.
+
+**Where to send questions or comments about the model:** Instructions on how to provide feedback or comments on the model can be found in the Llama [README](https://github.com/meta-llama/llama-models/blob/main/README.md). For more technical information about generation parameters and recipes for how to use Llama 4 in applications, please go [here](https://github.com/meta-llama/llama-cookbook).
+ 
+
+### Llama 4 Scout 17B 16E Instruct
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/meta.svg)
+
+Usage: `llm -m github/Llama-4-Scout-17B-16E-Instruct`
+
+**Publisher:** Meta 
+
+**Description:** The Llama 4 collection of models are natively multimodal AI models that enable text and multimodal experiences. These models leverage a mixture-of-experts architecture to offer industry-leading performance in text and image understanding.
+
+These Llama 4 models mark the beginning of a new era for the Llama ecosystem. This release includes two efficient models in the Llama 4 series, Llama 4 Scout, a 17 billion parameter model with 16 experts, and Llama 4 Maverick, a 17 billion parameter model with 128 experts.
+
+**Model developer**: Meta
+
+**Model Architecture:**  The Llama 4 models are auto-regressive language models that use a mixture-of-experts (MoE) architecture and incorporate early fusion for native multimodality.
+
+| Model Name | Training Data | Params | Input modalities | Output modalities | Context length | Token count | Knowledge cutoff |
+| :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
+| Llama 4 Scout (17Bx16E) | A mix of publicly available, licensed data and information from Meta’s products and services. This includes publicly shared posts from Instagram and Facebook and people’s interactions with Meta AI. Learn more in our [Privacy Center](https://www.facebook.com/privacy/guide/genai/). | 17B (Activated) 109B (Total) | Multilingual text and image | Multilingual text and code | 10M | \~40T | August 2024 |
+| Llama 4 Maverick (17Bx128E) |  | 17B (Activated)  400B (Total) | Multilingual text and image | Multilingual text and code | 1M | \~22T | August 2024 |
+
+**Supported languages:** Arabic, English, French, German, Hindi, Indonesian, Italian, Portuguese, Spanish, Tagalog, Thai, and Vietnamese.
+
+**Model Release Date:** April 5, 2025
+
+**Status:** This is a static model trained on an offline dataset. Future versions of the tuned models may be released as Meta improves model behavior with community feedback.
+
+**License Notice:**
+This is a Llama 4 multimodal modal. Under the License and AUP, the rights granted under Section 1(a) of the Llama 4 Community License Agreement are not granted to any individual domiciled in, or any company with a principal place of business in, the European Union. This restriction does not apply to end users of a product or service that incorporates any multimodal models.
+
+**Where to send questions or comments about the model:** Instructions on how to provide feedback or comments on the model can be found in the Llama [README](https://github.com/meta-llama/llama-models/blob/main/README.md). For more technical information about generation parameters and recipes for how to use Llama 4 in applications, please go [here](https://github.com/meta-llama/llama-cookbook).
+ 
+
+### Meta-Llama-3-70B-Instruct
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/meta.svg)
+
+Usage: `llm -m github/Meta-Llama-3-70B-Instruct`
+
+**Publisher:** Meta 
+
+**Description:** Meta developed and released the Meta Llama 3 family of large language models (LLMs), a collection of pretrained and instruction tuned generative text models in 8 and 70B sizes. The Llama 3 instruction tuned models are optimized for dialogue use cases and outperform many of the available open source chat models on common industry benchmarks. Further, in developing these models, we took great care to optimize helpfulness and safety. 
+
+#### Model Architecture
+
+Llama 3 is an auto-regressive language model that uses an optimized transformer architecture. The tuned versions use supervised fine-tuning (SFT) and reinforcement learning with human feedback (RLHF) to align with human preferences for helpfulness and safety.
+
+#### Training Datasets
+
+**Overview** Llama 3 was pretrained on over 15 trillion tokens of data from publicly available sources. The fine-tuning data includes publicly available instruction datasets, as well as over 10M human-annotated examples. Neither the pretraining nor the fine-tuning datasets include Meta user data.
+
+**Data Freshness** The pretraining data has a cutoff of March 2023 for the 8B and December 2023 for the 70B models respectively.  
+
+### Meta-Llama-3-8B-Instruct
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/meta.svg)
+
+Usage: `llm -m github/Meta-Llama-3-8B-Instruct`
+
+**Publisher:** Meta 
+
+**Description:** Meta developed and released the Meta Llama 3 family of large language models (LLMs), a collection of pretrained and instruction tuned generative text models in 8 and 70B sizes. The Llama 3 instruction tuned models are optimized for dialogue use cases and outperform many of the available open source chat models on common industry benchmarks. Further, in developing these models, we took great care to optimize helpfulness and safety. 
+
+#### Model Architecture
+
+Llama 3 is an auto-regressive language model that uses an optimized transformer architecture. The tuned versions use supervised fine-tuning (SFT) and reinforcement learning with human feedback (RLHF) to align with human preferences for helpfulness and safety.
+
+#### Training Datasets
+
+**Overview** Llama 3 was pretrained on over 15 trillion tokens of data from publicly available sources. The fine-tuning data includes publicly available instruction datasets, as well as over 10M human-annotated examples. Neither the pretraining nor the fine-tuning datasets include Meta user data.
+
+**Data Freshness** The pretraining data has a cutoff of March 2023 for the 8B and December 2023 for the 70B models respectively.  
+
+### Meta-Llama-3.1-405B-Instruct
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/meta.svg)
+
 Usage: `llm -m github/Meta-Llama-3-1-405B-Instruct`
 
-**Publisher:**  Meta 
+**Publisher:** Meta 
 
-**Description:**  The Meta Llama 3.1 collection of multilingual large language models (LLMs) is a collection of pretrained and instruction tuned
+**Description:** The Meta Llama 3.1 collection of multilingual large language models (LLMs) is a collection of pretrained and instruction tuned
 generative models in 8B, 70B and 405B sizes (text in/text out). The Llama 3.1 instruction tuned text only models (8B, 70B, 405B) are optimized for multilingual dialogue use cases and outperform many of the available open source and closed chat models on
 common industry benchmarks.
 
@@ -908,12 +932,14 @@ Llama 3.1 is an auto-regressive language model that uses an optimized transforme
 **Data Freshness:** The pretraining data has a cutoff of December 2023. 
 
 ### Meta-Llama-3.1-70B-Instruct
+
 ![Model Image](https://github.com//images/modules/marketplace/models/families/meta.svg)
+
 Usage: `llm -m github/Meta-Llama-3-1-70B-Instruct`
 
-**Publisher:**  Meta 
+**Publisher:** Meta 
 
-**Description:**  The Meta Llama 3.1 collection of multilingual large language models (LLMs) is a collection of pretrained and instruction tuned
+**Description:** The Meta Llama 3.1 collection of multilingual large language models (LLMs) is a collection of pretrained and instruction tuned
 generative models in 8B, 70B and 405B sizes (text in/text out). The Llama 3.1 instruction tuned text only models (8B, 70B, 405B) are optimized for multilingual dialogue use cases and outperform many of the available open source and closed chat models on
 common industry benchmarks.
 
@@ -928,12 +954,14 @@ Llama 3.1 is an auto-regressive language model that uses an optimized transforme
 **Data Freshness:** The pretraining data has a cutoff of December 2023. 
 
 ### Meta-Llama-3.1-8B-Instruct
+
 ![Model Image](https://github.com//images/modules/marketplace/models/families/meta.svg)
+
 Usage: `llm -m github/Meta-Llama-3-1-8B-Instruct`
 
-**Publisher:**  Meta 
+**Publisher:** Meta 
 
-**Description:**  The Meta Llama 3.1 collection of multilingual large language models (LLMs) is a collection of pretrained and instruction tuned
+**Description:** The Meta Llama 3.1 collection of multilingual large language models (LLMs) is a collection of pretrained and instruction tuned
 generative models in 8B, 70B and 405B sizes (text in/text out). The Llama 3.1 instruction tuned text only models (8B, 70B, 405B) are optimized for multilingual dialogue use cases and outperform many of the available open source and closed chat models on
 common industry benchmarks.
 
@@ -947,49 +975,38 @@ Llama 3.1 is an auto-regressive language model that uses an optimized transforme
 
 **Data Freshness:** The pretraining data has a cutoff of December 2023. 
 
-### Meta-Llama-3-70B-Instruct
-![Model Image](https://github.com//images/modules/marketplace/models/families/meta.svg)
-Usage: `llm -m github/Meta-Llama-3-70B-Instruct`
+### Codestral 25.01
 
-**Publisher:**  Meta 
+![Model Image](https://github.com//images/modules/marketplace/models/families/mistral ai.svg)
 
-**Description:**  Meta developed and released the Meta Llama 3 family of large language models (LLMs), a collection of pretrained and instruction tuned generative text models in 8 and 70B sizes. The Llama 3 instruction tuned models are optimized for dialogue use cases and outperform many of the available open source chat models on common industry benchmarks. Further, in developing these models, we took great care to optimize helpfulness and safety. 
+Usage: `llm -m github/Codestral-2501`
 
-#### Model Architecture
+**Publisher:** Mistral AI 
 
-Llama 3 is an auto-regressive language model that uses an optimized transformer architecture. The tuned versions use supervised fine-tuning (SFT) and reinforcement learning with human feedback (RLHF) to align with human preferences for helpfulness and safety.
+**Description:** 
+Codestral 25.01 is explicitly designed for code generation tasks. It helps developers write and interact with code through a shared instruction and completion API endpoint. As it masters code and can also converse in a variety of languages, it can be used to design advanced AI applications for software developers.
 
-#### Training Datasets
+A model fluent in 80+ programming languages including Python, Java, C, C++, JavaScript, and Bash. It also performs well on more specific ones like Swift and Fortran. 
+Improve developers productivity and reduce errors: it can complete coding functions, write tests, and complete any partial code using a fill-in-the-middle mechanism. 
 
-**Overview** Llama 3 was pretrained on over 15 trillion tokens of data from publicly available sources. The fine-tuning data includes publicly available instruction datasets, as well as over 10M human-annotated examples. Neither the pretraining nor the fine-tuning datasets include Meta user data.
+**New standard on the performance/latency space with a 256k context window.**
 
-**Data Freshness** The pretraining data has a cutoff of March 2023 for the 8B and December 2023 for the 70B models respectively.  
+#### Use-cases
 
-### Meta-Llama-3-8B-Instruct
-![Model Image](https://github.com//images/modules/marketplace/models/families/meta.svg)
-Usage: `llm -m github/Meta-Llama-3-8B-Instruct`
-
-**Publisher:**  Meta 
-
-**Description:**  Meta developed and released the Meta Llama 3 family of large language models (LLMs), a collection of pretrained and instruction tuned generative text models in 8 and 70B sizes. The Llama 3 instruction tuned models are optimized for dialogue use cases and outperform many of the available open source chat models on common industry benchmarks. Further, in developing these models, we took great care to optimize helpfulness and safety. 
-
-#### Model Architecture
-
-Llama 3 is an auto-regressive language model that uses an optimized transformer architecture. The tuned versions use supervised fine-tuning (SFT) and reinforcement learning with human feedback (RLHF) to align with human preferences for helpfulness and safety.
-
-#### Training Datasets
-
-**Overview** Llama 3 was pretrained on over 15 trillion tokens of data from publicly available sources. The fine-tuning data includes publicly available instruction datasets, as well as over 10M human-annotated examples. Neither the pretraining nor the fine-tuning datasets include Meta user data.
-
-**Data Freshness** The pretraining data has a cutoff of March 2023 for the 8B and December 2023 for the 70B models respectively.  
+- _Code generation_: code completion, suggestions, translation
+- _Code understanding and documentation_: code summarization and explanation
+- _Code quality_: code review, refactoring, bug fixing and test case generation
+- _Code generation with fill-in-the-middle (FIM) completion_: users can define the starting point of the code using a prompt, and the ending point of the code using an optional suffix and an optional stop. The Codestral model will then generate the code that fits in between, making it ideal for tasks that require a specific piece of code to be generated.  
 
 ### Ministral 3B
+
 ![Model Image](https://github.com//images/modules/marketplace/models/families/mistral ai.svg)
+
 Usage: `llm -m github/Ministral-3B`
 
-**Publisher:**  Mistral AI 
+**Publisher:** Mistral AI 
 
-**Description:**  **Ministral 3B** is a state-of-the-art Small Language Model (SLM) optimized for edge computing and on-device applications. As it is designed for low-latency and compute-efficient inference, it it also the perfect model for standard GenAI applications that have real-time requirements and high-volume.
+**Description:** **Ministral 3B** is a state-of-the-art Small Language Model (SLM) optimized for edge computing and on-device applications. As it is designed for low-latency and compute-efficient inference, it it also the perfect model for standard GenAI applications that have real-time requirements and high-volume.
 
 **Number of Parameters:** 3,6 billions
 
@@ -1005,12 +1022,14 @@ _Source: [Un Ministral, des Ministraux - Introducing the world’s best edge mod
  
 
 ### Mistral Large 24.11
+
 ![Model Image](https://github.com//images/modules/marketplace/models/families/mistral ai.svg)
+
 Usage: `llm -m github/Mistral-Large-2411`
 
-**Publisher:**  Mistral AI 
+**Publisher:** Mistral AI 
 
-**Description:**  Mistral Large 24.11 is an advanced Large Language Model (LLM) with state-of-the-art reasoning, knowledge and coding capabilities.
+**Description:** Mistral Large 24.11 is an advanced Large Language Model (LLM) with state-of-the-art reasoning, knowledge and coding capabilities.
 
 **NEW FEATURES.** 
 
@@ -1033,12 +1052,14 @@ Usage: `llm -m github/Mistral-Large-2411`
 *Output:* Models generate text only. 
 
 ### Mistral Nemo
+
 ![Model Image](https://github.com//images/modules/marketplace/models/families/mistral ai.svg)
+
 Usage: `llm -m github/Mistral-Nemo`
 
-**Publisher:**  Mistral AI 
+**Publisher:** Mistral AI 
 
-**Description:**  Mistral Nemo is a cutting-edge Language Model (LLM) boasting state-of-the-art reasoning, world knowledge, and coding capabilities within its size category.
+**Description:** Mistral Nemo is a cutting-edge Language Model (LLM) boasting state-of-the-art reasoning, world knowledge, and coding capabilities within its size category.
 
 **Jointly developed with Nvidia.** This collaboration has resulted in a powerful 12B model that pushes the boundaries of language understanding and generation.
 
@@ -1048,76 +1069,468 @@ Usage: `llm -m github/Mistral-Nemo`
 
 **Advanced Reasoning.** Mistral Nemo demonstrates state-of-the-art mathematical and reasoning capabilities within its size category. 
 
-### Mistral Large
+### Mistral Medium 3 (25.05)
+
 ![Model Image](https://github.com//images/modules/marketplace/models/families/mistral ai.svg)
-Usage: `llm -m github/Mistral-large`
 
-**Publisher:**  Mistral AI 
+Usage: `llm -m github/mistral-medium-2505`
 
-**Description:**  Mistral Large is Mistral AI's most advanced Large Language Model (LLM). It can be used on any language-based task thanks to its state-of-the-art reasoning and knowledge capabilities.
+**Publisher:** Mistral AI 
 
-Additionally, Mistral Large is:
+**Description:** <!-- DO NOT CHANGE MARKDOWN HEADERS. IF CHANGED, MODEL CARD MAY BE REJECTED BY A REVIEWER -->
 
-- **Specialized in RAG.** Crucial information is not lost in the middle of long context windows (up to 32K tokens).
-- **Strong in coding.**  Code generation, review and comments. Supports all mainstream coding languages.
-- **Multi-lingual by design.** Best-in-class performance in French, German, Spanish, and Italian - in addition to English. Dozens of other languages are supported.
-- **Responsible AI.** Efficient guardrails baked in the model, with additional safety layer with safe_mode option
+<!-- `description.md` is required. -->
+
+Mistral Medium 3 is a SOTA & versatile model designed for a wide range of tasks, including programming, mathematical reasoning, understanding long documents, summarization, and dialogue.
+
+It boasts multi-modal capabilities, enabling it to process visual inputs, and supports dozens of languages, including over 80 coding languages. Additionally, it features function calling and agentic workflows.
+
+Mistral Medium 3 is optimized for single-node inference, particularly for long-context applications. Its size allows it to achieve high throughput on a single node. 
+
+### Mistral Small 3.1
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/mistral ai.svg)
+
+Usage: `llm -m github/mistral-small-2503`
+
+**Publisher:** Mistral AI 
+
+**Description:** <!-- DO NOT CHANGE MARKDOWN HEADERS. IF CHANGED, MODEL CARD MAY BE REJECTED BY A REVIEWER -->
+
+<!-- `description.md` is required. -->
+
+Mistral Small 3.1 (25.03) is the enhanced version of Mistral Small 3 (25.01), featuring multimodal capabilities and an extended context length of up to 128k. It can now process and understand visual inputs as well as long documents, further expanding its range of applications. Like its predecessor, Mistral Small 3.1 (25.03) is a versatile model designed for various tasks such as programming, mathematical reasoning, document understanding, and dialogue. Mistral Small 3.1 (25.03) was designed with low-latency applications in mind and delivers best-in-class efficiency compared to models of the same quality.
+
+Mistral Small 3.1 (25.03) has undergone a full post-training process to align the model with human preferences and needs, so it is suitable out-of-the-box for applications that require chat or precise instruction following. 
+
+### MAI-DS-R1
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/microsoft.svg)
+
+Usage: `llm -m github/MAI-DS-R1`
+
+**Publisher:** Microsoft 
+
+**Description:** MAI-DS-R1 is a DeepSeek-R1 reasoning model that has been post-trained by Microsoft AI team that aims to fill in information gaps in the previous version of the model and to remove and improve its harm protections while maintaining R1 reasoning capabilities. The model was trained using 110k safety-related examples from [Tulu](https://huggingface.co/datasets/allenai/tulu-3-sft-mixture) 3 SFT dataset, in addition to dataset of approximately 350k multilingual examples internally developed capturing various topics with reported biases. Both sets of queries were processed with DeepSeek-R1 to generate Chain-of-Thought (CoT) reasoning and final answers. MAI-DS-R1 has successfully unblocked the majority of previously blocked queries from the original R1 model while outperforming the recently published R1-1776 model (post-trained by Perplexity) in relevant safety benchmarks.  The foregoing results were achieved while preserving the general reasoning capabilities of the original DeepSeek-R1.  
+
+Please note:  Microsoft has post-trained this model to address certain limitations relevant to its outputs, but previous limitations and considerations for the model remain, including security considerations 
+
+#### Model architecture and objective
+
+* Architecture: Based on DeepSeek-R1, a transformer-based autoregressive language model utilizing multi-head self-attention and Mixture-of-Experts (MoE) for scalable and efficient inference. 
+* Objective: Post-trained to reduce CCP-aligned restrictions and enhance harm protection, while preserving the original model’s strong chain-of-thought reasoning and general-purpose language understanding capabilities.
+* Pre-trained Model Base: DeepSeek-R1 (671B) 
+
+### Phi-3-medium instruct (128k)
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/microsoft.svg)
+
+Usage: `llm -m github/Phi-3-medium-128k-instruct`
+
+**Publisher:** Microsoft 
+
+**Description:** The Phi-3-Medium-128K-Instruct is a 14B parameters, lightweight, state-of-the-art open model trained with the Phi-3 datasets that includes both synthetic data and the filtered publicly available websites data with a focus on high-quality and reasoning dense properties.
+The model belongs to the Phi-3 family with the Medium version in two variants 4K and 128K which is the context length (in tokens) that it can support.
+
+The model underwent a post-training process that incorporates both supervised fine-tuning and direct preference optimization for the instruction following and safety measures.
+When assessed against benchmarks testing common sense, language understanding, math, code, long context and logical reasoning, Phi-3-Medium-128K-Instruct showcased a robust and state-of-the-art performance among models of the same-size and next-size-up.
 
 #### Resources
 
-For full details of this model, please read [release blog post](https://aka.ms/mistral-blog). 
-
-### Mistral Large (2407)
-![Model Image](https://github.com//images/modules/marketplace/models/families/mistral ai.svg)
-Usage: `llm -m github/Mistral-large-2407`
-
-**Publisher:**  Mistral AI 
-
-**Description:**  Mistral Large (2407) is an advanced Large Language Model (LLM) with state-of-the-art reasoning, knowledge and coding capabilities.
-
-**Multi-lingual by design.** Dozens of languages supported, including English, French, German, Spanish, Italian, Chinese, Japanese, Korean, Portuguese, Dutch and Polish
-
-**Proficient in coding.** Trained on 80+ coding languages such as Python, Java, C, C++, JavaScript, and Bash. Also trained on more specific languages such as Swift and Fortran
-
-**Agent-centric.** Best-in-class agentic capabilities with native function calling and JSON outputting 
-
-**Advanced Reasoning.** State-of-the-art mathematical and reasoning capabilities 
-
-### Mistral Small
-![Model Image](https://github.com//images/modules/marketplace/models/families/mistral ai.svg)
-Usage: `llm -m github/Mistral-small`
-
-**Publisher:**  Mistral AI 
-
-**Description:**  Mistral Small is Mistral AI's most efficient Large Language Model (LLM). It can be used on any language-based task that requires high efficiency and low latency.
-
-Mistral Small is:
-
-- **A small model optimized for low latency.** Very efficient for high volume and low latency workloads. Mistral Small is Mistral's smallest proprietary model, it outperforms Mixtral 8x7B and has lower latency. 
-- **Specialized in RAG.** Crucial information is not lost in the middle of long context windows (up to 32K tokens).
-- **Strong in coding.** Code generation, review and comments. Supports all mainstream coding languages.
-- **Multi-lingual by design.** Best-in-class performance in French, German, Spanish, and Italian - in addition to English. Dozens of other languages are supported.
-- **Responsible AI.** Efficient guardrails baked in the model, with additional safety layer with safe_mode option
-
-#### Resources
-
-For full details of this model, please read [release blog post](https://aka.ms/mistral-blog). 
-
-### JAIS 30b Chat
-![Model Image](https://github.com//images/modules/marketplace/models/families/core42.svg)
-Usage: `llm -m github/jais-30b-chat`
-
-**Publisher:**  Core42 
-
-**Description:**  JAIS 30b Chat from Core42 is an auto-regressive bi-lingual LLM for **Arabic** & **English** with state-of-the-art capabilities in Arabic.
+🏡 [Phi-3 Portal](https://azure.microsoft.com/en-us/products/phi-3) <br>
+📰 [Phi-3 Microsoft Blog](https://aka.ms/Phi-3Build2024) <br>
+📖 [Phi-3 Technical Report](https://aka.ms/phi3-tech-report) <br>
+🛠️ [Phi-3 on Azure AI Studio](https://aka.ms/phi3-azure-ai) <br>
+👩‍🍳 [Phi-3 Cookbook](https://github.com/microsoft/Phi-3CookBook) <br>
 
 #### Model Architecture
 
-The model is based on transformer-based decoder-only (GPT-3) architecture and uses SwiGLU non-linearity. It uses LiBi position embeddings, enabling the model to extrapolate to long sequence lengths, providing improved context length handling. The tuned versions use supervised fine-tuning (SFT).
+Phi-3-Medium-128k-Instruct has 14B parameters and is a dense decoder-only Transformer model. The model is fine-tuned with Supervised fine-tuning (SFT) and Direct Preference Optimization (DPO) to ensure alignment with human preferences and safety guidelines.
 
 #### Training Datasets
 
-The pretraining data for Jais-30b is a total of 1.63 T tokens consisting of English, Arabic, and code. Jais-30b-chat model is finetuned with both Arabic and English prompt-response pairs. We extended our finetuning datasets used for jais-13b-chat which included a wide range of instructional data across various domains. We cover a wide range of common tasks including question answering, code generation, and reasoning over textual content. To enhance performance in Arabic, we developed an in-house Arabic dataset as well as translating some open-source English instructions into Arabic.
+Our training data includes a wide variety of sources, totaling 4.8 trillion tokens (including 10% multilingual), and is a combination of 
+1) Publicly available documents filtered rigorously for quality, selected high-quality educational data, and code; 
+2) Newly created synthetic, "textbook - like" data for the purpose of teaching math, coding, common sense reasoning, general knowledge of the world (science, daily activities, theory of mind, etc.); 
+3) High quality chat format supervised data covering various topics to reflect human preferences on different aspects such as instruct-following, truthfulness, honesty and helpfulness.
 
-The pretraining data has a cutoff of December 2022, with some tuning data being more recent, up to October 2023. 
+We are focusing on the quality of data that could potentially improve the reasoning ability for the model, and we filter the publicly available documents to contain the correct level of knowledge. As an example, the result of a game in premier league in a particular day might be good training data for frontier models, but we need to remove such information to leave more model capacity for reasoning for the small size models. More details about data can be found in the [Phi-3 Technical Report](https://aka.ms/phi3-tech-report). 
+
+### Phi-3-medium instruct (4k)
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/microsoft.svg)
+
+Usage: `llm -m github/Phi-3-medium-4k-instruct`
+
+**Publisher:** Microsoft 
+
+**Description:** The Phi-3-Medium-4K-Instruct is a 14B parameters, lightweight, state-of-the-art open model trained with the Phi-3 datasets that includes both synthetic data and the filtered publicly available websites data with a focus on high-quality and reasoning dense properties.
+The model belongs to the Phi-3 family with the Medium version in two variants 4K and 128K which is the context length (in tokens) that it can support.
+
+The model underwent a post-training process that incorporates both supervised fine-tuning and direct preference optimization for the instruction following and safety measures.
+When assessed against benchmarks testing common sense, language understanding, math, code, long context and logical reasoning, Phi-3-Medium-4K-Instruct showcased a robust and state-of-the-art performance among models of the same-size and next-size-up.
+
+#### Resources
+
+🏡 [Phi-3 Portal](https://azure.microsoft.com/en-us/products/phi-3) <br>
+📰 [Phi-3 Microsoft Blog](https://aka.ms/Phi-3Build2024) <br>
+📖 [Phi-3 Technical Report](https://aka.ms/phi3-tech-report) <br>
+🛠️ [Phi-3 on Azure AI Studio](https://aka.ms/phi3-azure-ai) <br>
+👩‍🍳 [Phi-3 Cookbook](https://github.com/microsoft/Phi-3CookBook) <br>
+
+#### Model Architecture
+
+Phi-3-Medium-4K-Instruct has 14B parameters and is a dense decoder-only Transformer model. The model is fine-tuned with Supervised fine-tuning (SFT) and Direct Preference Optimization (DPO) to ensure alignment with human preferences and safety guidelines.
+
+#### Training Datasets
+
+Our training data includes a wide variety of sources, totaling 4.8 trillion tokens (including 10% multilingual), and is a combination of 
+1) Publicly available documents filtered rigorously for quality, selected high-quality educational data, and code; 
+2) Newly created synthetic, "textbook-like" data for the purpose of teaching math, coding, common sense reasoning, general knowledge of the world (science, daily activities, theory of mind, etc.); 
+3) High quality chat format supervised data covering various topics to reflect human preferences on different aspects such as instruct-following, truthfulness, honesty and helpfulness.
+
+We are focusing on the quality of data that could potentially improve the reasoning ability for the model, and we filter the publicly available documents to contain the correct level of knowledge. As an example, the result of a game in premier league in a particular day might be good training data for frontier models, but we need to remove such information to leave more model capacity for reasoning for the small size models. More details about data can be found in the [Phi-3 Technical Report](https://aka.ms/phi3-tech-report). 
+
+### Phi-3-mini instruct (128k)
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/microsoft.svg)
+
+Usage: `llm -m github/Phi-3-mini-128k-instruct`
+
+**Publisher:** Microsoft 
+
+**Description:** The Phi-3-Mini-128K-Instruct is a 3.8 billion-parameter, lightweight, state-of-the-art open model trained using the Phi-3 datasets.
+This dataset includes both synthetic data and filtered publicly available website data, with an emphasis on high-quality and reasoning-dense properties.
+
+After initial training, the model underwent a post-training process that involved supervised fine-tuning and direct preference optimization to enhance its ability to follow instructions and adhere to safety measures.
+When evaluated against benchmarks that test common sense, language understanding, mathematics, coding, long-term context, and logical reasoning, the Phi-3 Mini-128K-Instruct demonstrated robust and state-of-the-art performance among models with fewer than 13 billion parameters.
+
+#### Resources
+
+🏡 [Phi-3 Portal](https://azure.microsoft.com/en-us/products/phi-3) <br>
+📰 [Phi-3 Microsoft Blog](https://aka.ms/Phi-3Build2024) <br>
+📖 [Phi-3 Technical Report](https://aka.ms/phi3-tech-report) <br>
+🛠️ [Phi-3 on Azure AI Studio](https://aka.ms/phi3-azure-ai) <br>
+👩‍🍳 [Phi-3 Cookbook](https://github.com/microsoft/Phi-3CookBook) <br>
+
+#### Model Architecture
+
+Phi-3 Mini-128K-Instruct has 3.8B parameters and is a dense decoder-only Transformer model. The model is fine-tuned with Supervised fine-tuning (SFT) and Direct Preference Optimization (DPO) to ensure alignment with human preferences and safety guidelines.
+
+#### Training Datasets
+
+Our training data includes a wide variety of sources, totaling 4.9 trillion tokens, and is a combination of 
+1) Publicly available documents filtered rigorously for quality, selected high-quality educational data, and code; 
+2) Newly created synthetic, "textbook - like" data for the purpose of teaching math, coding, common sense reasoning, general knowledge of the world (science, daily activities, theory of mind, etc.); 
+3) High quality chat format supervised data covering various topics to reflect human preferences on different aspects such as instruct-following, truthfulness, honesty and helpfulness.
+
+We are focusing on the quality of data that could potentially improve the reasoning ability for the model, and we filter the publicly available documents to contain the correct level of knowledge. As an example, the result of a game in premier league in a particular day might be good training data for frontier models, but we need to remove such information to leave more model capacity for reasoning for the small size models. More details about data can be found in the [Phi-3 Technical Report](https://aka.ms/phi3-tech-report). 
+
+### Phi-3-mini instruct (4k)
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/microsoft.svg)
+
+Usage: `llm -m github/Phi-3-mini-4k-instruct`
+
+**Publisher:** Microsoft 
+
+**Description:** The Phi-3-Mini-4K-Instruct is a 3.8B parameters, lightweight, state-of-the-art open model trained with the Phi-3 datasets that includes both synthetic data and the filtered publicly available websites data with a focus on high-quality and reasoning dense properties.
+The model belongs to the Phi-3 family with the Mini version in two variants 4K and 128K which is the context length (in tokens) that it can support.
+
+The model underwent a post-training process that incorporates both supervised fine-tuning and direct preference optimization for the instruction following and safety measures.
+When assessed against benchmarks testing common sense, language understanding, math, code, long context and logical reasoning, Phi-3 Mini-4K-Instruct showcased a robust and state-of-the-art performance among models with less than 13 billion parameters.
+
+#### Resources
+
+🏡 [Phi-3 Portal](https://azure.microsoft.com/en-us/products/phi-3) <br>
+📰 [Phi-3 Microsoft Blog](https://aka.ms/Phi-3Build2024) <br>
+📖 [Phi-3 Technical Report](https://aka.ms/phi3-tech-report) <br>
+🛠️ [Phi-3 on Azure AI Studio](https://aka.ms/phi3-azure-ai) <br>
+👩‍🍳 [Phi-3 Cookbook](https://github.com/microsoft/Phi-3CookBook) <br>
+
+#### Model Architecture
+
+Phi-3 Mini-4K-Instruct has 3.8B parameters and is a dense decoder-only Transformer model. The model is fine-tuned with Supervised fine-tuning (SFT) and Direct Preference Optimization (DPO) to ensure alignment with human preferences and safety guidelines.
+
+#### Training Datasets
+
+Our training data includes a wide variety of sources, totaling 4.9 trillion tokens, and is a combination of 
+1) Publicly available documents filtered rigorously for quality, selected high-quality educational data, and code; 
+2) Newly created synthetic, "textbook - like" data for the purpose of teaching math, coding, common sense reasoning, general knowledge of the world (science, daily activities, theory of mind, etc.); 
+3) High quality chat format supervised data covering various topics to reflect human preferences on different aspects such as instruct-following, truthfulness, honesty and helpfulness.
+
+We are focusing on the quality of data that could potentially improve the reasoning ability for the model, and we filter the publicly available documents to contain the correct level of knowledge. As an example, the result of a game in premier league in a particular day might be good training data for frontier models, but we need to remove such information to leave more model capacity for reasoning for the small size models. More details about data can be found in the [Phi-3 Technical Report](https://aka.ms/phi3-tech-report). 
+
+### Phi-3-small instruct (128k)
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/microsoft.svg)
+
+Usage: `llm -m github/Phi-3-small-128k-instruct`
+
+**Publisher:** Microsoft 
+
+**Description:** The Phi-3-Small-128K-Instruct is a 7B parameters, lightweight, state-of-the-art open model trained with the Phi-3 datasets that includes both synthetic data and the filtered publicly available websites data with a focus on high-quality and reasoning dense properties. The model supports 128K context length (in tokens).
+
+The model underwent a post-training process that incorporates both supervised fine-tuning and direct preference optimization for the instruction following and safety measures.
+When assessed against benchmarks testing common sense, language understanding, math, code, long context and logical reasoning, Phi-3-Small-128K-Instruct showcased a robust and state-of-the-art performance among models of the same-size and next-size-up.
+
+#### Resources
+
++ [Phi-3 Microsoft Blog](https://aka.ms/phi3blog-april)
++ [Phi-3 Technical Report](https://aka.ms/phi3-tech-report)
+
+#### Model Architecture
+
+Phi-3 Small-128K-Instruct has 7B parameters and is a dense decoder-only Transformer model. The model is fine-tuned with Supervised fine-tuning (SFT) and Direct Preference Optimization (DPO) to ensure alignment with human preferences and safety guidelines.
+
+#### Training Datasets
+
+Our training data includes a wide variety of sources, totaling 4.8 trillion tokens (including 10% multilingual), and is a combination of 
+1) Publicly available documents filtered rigorously for quality, selected high-quality educational data, and code; 
+2) Newly created synthetic, “textbook-like” data for the purpose of teaching math, coding, common sense reasoning, general knowledge of the world (science, daily activities, theory of mind, etc.); 
+3) High quality chat format supervised data covering various topics to reflect human preferences on different aspects such as instruct-following, truthfulness, honesty and helpfulness.
+
+We are focusing on the quality of data that could potentially improve the reasoning ability for the model, and we filter the publicly available documents to contain the correct level of knowledge. As an example, the result of a game in premier league in a particular day might be good training data for frontier models, but we need to remove such information to leave more model capacity for reasoning for the small size models. More details about data can be found in the [Phi-3 Technical Report](https://aka.ms/phi3-tech-report). 
+
+### Phi-3-small instruct (8k)
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/microsoft.svg)
+
+Usage: `llm -m github/Phi-3-small-8k-instruct`
+
+**Publisher:** Microsoft 
+
+**Description:** The Phi-3-Small-8K-Instruct is a 7B parameters, lightweight, state-of-the-art open model trained with the Phi-3 datasets that includes both synthetic data and the filtered publicly available websites data with a focus on high-quality and reasoning dense properties. The model supports 8K context length (in tokens).
+
+The model underwent a post-training process that incorporates both supervised fine-tuning and direct preference optimization for the instruction following and safety measures.
+When assessed against benchmarks testing common sense, language understanding, math, code, long context and logical reasoning, Phi-3-Small-8K-Instruct showcased a robust and state-of-the-art performance among models of the same-size and next-size-up.
+
+#### Resources
+
+🏡 [Phi-3 Portal](https://azure.microsoft.com/en-us/products/phi-3) <br>
+📰 [Phi-3 Microsoft Blog](https://aka.ms/Phi-3Build2024) <br>
+📖 [Phi-3 Technical Report](https://aka.ms/phi3-tech-report) <br>
+🛠️ [Phi-3 on Azure AI Studio](https://aka.ms/phi3-azure-ai) <br>
+👩‍🍳 [Phi-3 Cookbook](https://github.com/microsoft/Phi-3CookBook) <br>
+
+#### Model Architecture
+
+Phi-3 Small-8K-Instruct has 7B parameters and is a dense decoder-only Transformer model. The model is fine-tuned with Supervised fine-tuning (SFT) and Direct Preference Optimization (DPO) to ensure alignment with human preferences and safety guidelines.
+
+#### Training Datasets
+
+Our training data includes a wide variety of sources, totaling 4.8 trillion tokens (including 10% multilingual), and is a combination of 
+1) Publicly available documents filtered rigorously for quality, selected high-quality educational data, and code; 
+2) Newly created synthetic, “textbook-like” data for the purpose of teaching math, coding, common sense reasoning, general knowledge of the world (science, daily activities, theory of mind, etc.); 
+3) High quality chat format supervised data covering various topics to reflect human preferences on different aspects such as instruct-following, truthfulness, honesty and helpfulness.
+
+We are focusing on the quality of data that could potentially improve the reasoning ability for the model, and we filter the publicly available documents to contain the correct level of knowledge. As an example, the result of a game in premier league in a particular day might be good training data for frontier models, but we need to remove such information to leave more model capacity for reasoning for the small size models. More details about data can be found in the [Phi-3 Technical Report](https://aka.ms/phi3-tech-report). 
+
+### Phi-3.5-MoE instruct (128k)
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/microsoft.svg)
+
+Usage: `llm -m github/Phi-3-5-MoE-instruct`
+
+**Publisher:** Microsoft 
+
+**Description:** Phi-3.5-MoE is a lightweight, state-of-the-art open model built upon datasets used for Phi-3 - synthetic data and filtered publicly available documents - with a focus on very high-quality, reasoning dense data. The model supports multilingual and comes with 128K context length (in tokens). The model underwent a rigorous enhancement process, incorporating supervised fine-tuning, proximal policy optimization, and direct preference optimization to ensure precise instruction adherence and robust safety measures.
+
+### Resources
+🏡 [Phi-3 Portal](https://azure.microsoft.com/en-us/products/phi-3) <br>
+📰 [Phi-3 Microsoft Blog](https://aka.ms/phi3.5-techblog) <br>
+📖 [Phi-3 Technical Report](https://arxiv.org/abs/2404.14219) <br>
+👩‍🍳 [Phi-3 Cookbook](https://github.com/microsoft/Phi-3CookBook) <br>
+
+### Model Architecture
+Phi-3.5-MoE has 16x3.8B parameters with 6.6B active parameters when using 2 experts. The model is a mixture-of-expert decoder-only Transformer model using the tokenizer with vocabulary size of 32,064.
+
+### Training Data
+This is a static model trained on an offline dataset with 4.9T tokens and a cutoff date October 2023 for publicly available data. Future versions of the tuned models may be released as we improve models.
+ 
+
+### Phi-3.5-mini instruct (128k)
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/microsoft.svg)
+
+Usage: `llm -m github/Phi-3-5-mini-instruct`
+
+**Publisher:** Microsoft 
+
+**Description:** Phi-3.5-mini is a lightweight, state-of-the-art open model built upon datasets used for Phi-3 - synthetic data and filtered publicly available websites - with a focus on very high-quality, reasoning dense data. The model belongs to the Phi-3 model family and supports 128K token context length. The model underwent a rigorous enhancement process, incorporating both supervised fine-tuning, proximal policy optimization, and direct preference optimization to ensure precise instruction adherence and robust safety measures.
+
+### Resources
+🏡 [Phi-3 Portal](https://azure.microsoft.com/en-us/products/phi-3) <br>
+📰 [Phi-3 Microsoft Blog](https://aka.ms/phi3.5-techblog) <br>
+📖 [Phi-3 Technical Report](https://arxiv.org/abs/2404.14219) <br>
+👩‍🍳 [Phi-3 Cookbook](https://github.com/microsoft/Phi-3CookBook) <br>
+
+### Model Architecture
+Phi-3.5-mini has 3.8B parameters and is a dense decoder-only Transformer model using the same tokenizer as Phi-3 Mini. It is a text-only model best suited for prompts using chat format.
+
+### Training Data
+Phi-3.5-mini is a static model trained on an offline dataset with 3.4T tokens and a cutoff date October 2023 for publicly available data. Future versions of the tuned models may be released as we improve models. 
+
+### Phi-3.5-vision instruct (128k)
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/microsoft.svg)
+
+Usage: `llm -m github/Phi-3-5-vision-instruct`
+
+**Publisher:** Microsoft 
+
+**Description:** Phi-3.5-vision is a lightweight, state-of-the-art open multimodal model built upon datasets which include - synthetic data and filtered publicly available websites - with a focus on very high-quality, reasoning dense data both on text and vision. The model belongs to the Phi-3 model family, and the multimodal version comes with 128K context length (in tokens) it can support. The model underwent a rigorous enhancement process, incorporating both supervised fine-tuning and direct preference optimization to ensure precise instruction adherence and robust safety measures.
+
+### Resources
+🏡 [Phi-3 Portal](https://azure.microsoft.com/en-us/products/phi-3) <br>
+📰 [Phi-3 Microsoft Blog](https://aka.ms/phi3.5-techblog) <br>
+📖 [Phi-3 Technical Report](https://arxiv.org/abs/2404.14219) <br>
+👩‍🍳 [Phi-3 Cookbook](https://github.com/microsoft/Phi-3CookBook) <br>
+
+### Model Summary
+|      |      |
+|------|------|
+| **Architecture** | Phi-3.5-vision has 4.2B parameters and contains image encoder, connector, projector, and Phi-3 Mini language model. |
+| **Inputs** | Text and Image. It’s best suited for prompts using the chat format. |
+| **Context length** | 128K tokens |
+| **GPUs** | 256 A100-80G |
+| **Training time** | 6 days |
+| **Training data** | 500B tokens (vision tokens + text tokens) |
+| **Outputs** | Generated text in response to the input |
+| **Dates** | Trained between July and August 2024 |
+| **Status** | This is a static model trained on an offline text dataset with cutoff date March 15, 2024. Future versions of the tuned models may be released as we improve models. |
+| **Release date** | August 20, 2024 |
+| **License** | MIT |
+ 
+
+### Phi-4-mini-instruct
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/microsoft.svg)
+
+Usage: `llm -m github/Phi-4-mini-instruct`
+
+**Publisher:** Microsoft 
+
+**Description:** Phi-4-mini-instruct is a lightweight open model built upon synthetic data and filtered publicly available websites - with a focus on high-quality, reasoning dense data. The model belongs to the Phi-4 model family and supports 128K token context length. The model underwent an enhancement process, incorporating both supervised fine-tuning and direct preference optimization to support precise instruction adherence and robust safety measures.
+
+Phi-4-mini-instruct is a dense decoder-only Transformer model with 3.8B parameters, offering key improvements over Phi-3.5-Mini, including a 200K vocabulary, grouped-query attention, and shared embedding. It is designed for chat-completion prompts, generating text based on user input, with a context length of 128K tokens. This static model was trained on an offline dataset with a June 2024 data cutoff. It supports many languages, including Arabic, Chinese, Czech, Danish, Dutch, English, Finnish, French, German, Hebrew, Hungarian, Italian, Japanese, Korean, Norwegian, Polish, Portuguese, Russian, Spanish, Swedish, Thai, Turkish, Ukrainian.
+
+The model is intended for broad multilingual commercial and research use. The model provides uses for general purpose AI systems and applications which require 1) memory/compute constrained environments; 2) latency bound scenarios; 3) strong reasoning (especially math and logic). The model is designed to accelerate research on language and multimodal models, for use as a building block for generative AI powered features. 
+
+### Phi-4-mini-reasoning
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/microsoft.svg)
+
+Usage: `llm -m github/Phi-4-mini-reasoning`
+
+**Publisher:** Microsoft 
+
+**Description:** Phi-4-mini-reasoning is a lightweight open model designed for advanced mathematical reasoning and logic-intensive problem-solving. It is particularly well-suited for tasks such as formal proofs, symbolic computation, and solving multi-step word problems. With its efficient architecture, the model balances high-quality reasoning performance with cost-effective deployment, making it ideal for educational applications, embedded tutoring, and lightweight edge or mobile systems.
+
+Phi-4-mini-reasoning supports a 128K token context length, enabling it to process and reason over long mathematical problems and proofs. Built on synthetic and high-quality math datasets, the model leverages advanced fine-tuning techniques such as supervised fine-tuning and preference modeling to enhance reasoning capabilities. Its training incorporates safety and alignment protocols, ensuring robust and reliable performance across supported use cases. 
+
+### Phi-4-multimodal-instruct
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/microsoft.svg)
+
+Usage: `llm -m github/Phi-4-multimodal-instruct`
+
+**Publisher:** Microsoft 
+
+**Description:** <!-- DO NOT CHANGE MARKDOWN HEADERS. IF CHANGED, MODEL CARD MAY BE REJECTED BY A REVIEWER -->
+
+<!-- `description.md` is required. -->
+
+Phi-4-multimodal-instruct is a lightweight open multimodal foundation model that leverages the language, vision, and speech research and datasets used for Phi-3.5 and 4.0 models. The model processes text, image, and audio inputs, generating text outputs, and comes with 128K token context length. The model underwent an enhancement process, incorporating both supervised fine-tuning, and direct preference optimization to support precise instruction adherence and safety measures.
+
+Phi-4-multimodal-instruct has 5.6B parameters and is a multimodal transformer model. The model has the pretrained Phi-4-mini as the backbone language model, and the advanced encoders and adapters of vision and speech. It has been trained on 5T text tokens, 2.3M speech hours, and 1.1T image-text tokens. This is a static model trained on offline datasets with the cutoff date of June 2024 for publicly available data. The supported languages for each modalities are:
+
+- **Text**: Arabic, Chinese, Czech, Danish, Dutch, English, Finnish, French, German, Hebrew, Hungarian, Italian, Japanese, Korean, Norwegian, Polish, Portuguese, Russian, Spanish, Swedish, Thai, Turkish, Ukrainian
+- **Image**: English
+- **Audio**: English, Chinese, German, French, Italian, Japanese, Spanish, Portuguese 
+
+### Phi-4-Reasoning
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/microsoft.svg)
+
+Usage: `llm -m github/Phi-4-reasoning`
+
+**Publisher:** Microsoft 
+
+**Description:** Phi-4-Reasoning is a state-of-the-art open-weight reasoning model finetuned from Phi-4 using supervised fine-tuning on a dataset of chain-of-thought traces and reinforcement learning. The supervised fine-tuning dataset includes a blend of synthetic prompts and high-quality filtered data from public domain websites, focused on math, science, and coding skills as well as alignment data for safety and Responsible AI. The goal of this approach was to ensure that small capable models were trained with data focused on high quality and advanced reasoning. 
+
+### Phi-4
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/microsoft.svg)
+
+Usage: `llm -m github/Phi-4`
+
+**Publisher:** Microsoft 
+
+**Description:** Phi-4 is a state-of-the-art open model built upon a blend of synthetic datasets, data from filtered public domain websites, and acquired academic books and Q&A datasets. The goal of this approach was to ensure that small capable models were trained with data focused on high quality and advanced reasoning.
+
+Phi-4 underwent a rigorous enhancement and alignment process, incorporating both supervised fine-tuning and direct preference optimization to ensure precise instruction adherence and robust safety measures.
+
+For more information, reference the [Phi-4 Technical Report](https://www.microsoft.com/en-us/research/uploads/prod/2024/12/P4TechReport.pdf).
+
+### Model Architecture
+
+Phi-4 is a 14B parameters, dense decoder-only transformer model. 
+
+### Training Data
+
+Our training data is an extension of the data used for Phi-3 and includes a wide variety of sources from:
+
+1. Publicly available documents filtered rigorously for quality, selected high-quality educational data, and code.
+
+2. Newly created synthetic, "textbook-like" data for the purpose of teaching math, coding, common sense reasoning, general knowledge of the world (science, daily activities, theory of mind, etc.).
+
+3. Acquired academic books and Q&A datasets.
+
+4. High quality chat format supervised data covering various topics to reflect human preferences on different aspects such as instruct-following, truthfulness, honesty and helpfulness.
+
+Multilingual data constitutes about 8% of our overall data. We are focusing on the quality of data that could potentially improve the reasoning ability for the model, and we filter the publicly available documents to contain the correct level of knowledge.
+ 
+
+## Supported Embedding Models
+
+### OpenAI Text Embedding 3 (large)
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/openai.svg)
+
+Usage: `llm embed -m github/text-embedding-3-large`
+
+**Publisher:** OpenAI 
+
+**Description:** Text-embedding-3 series models are the latest and most capable embedding model. The text-embedding-3 models offer better average multi-language retrieval performance with the MIRACL benchmark while still maintaining performance for English tasks with the MTEB benchmark. 
+
+### OpenAI Text Embedding 3 (small)
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/openai.svg)
+
+Usage: `llm embed -m github/text-embedding-3-small`
+
+**Publisher:** OpenAI 
+
+**Description:** Text-embedding-3 series models are the latest and most capable embedding model. The text-embedding-3 models offer better average multi-language retrieval performance with the MIRACL benchmark while still maintaining performance for English tasks with the MTEB benchmark. 
+
+### Cohere Embed v3 English
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/cohere.svg)
+
+Usage: `llm embed -m github/Cohere-embed-v3-english`
+
+**Publisher:** Cohere 
+
+**Description:** Cohere Embed English is the market’s leading multimodal (text, image) representation model used for semantic search, retrieval-augmented generation (RAG), classification, and clustering. Embed English has top performance on the HuggingFace MTEB benchmark and performs well on a variety of industries such as Finance, Legal, and General-Purpose Corpora.The model was trained on nearly 1B English training pairs. 
+
+### Cohere Embed v3 Multilingual
+
+![Model Image](https://github.com//images/modules/marketplace/models/families/cohere.svg)
+
+Usage: `llm embed -m github/Cohere-embed-v3-multilingual`
+
+**Publisher:** Cohere 
+
+**Description:** Cohere Embed Multilingual is the market’s leading multimodal (text, image) representation model used for semantic search, retrieval-augmented generation (RAG), classification, and clustering. Embed Multilingual supports 100+ languages and can be used to search within a language (e.g., search with a French query on French documents) and across languages (e.g., search with an English query on Chinese documents). This model was trained on nearly 1B English training pairs and nearly 0.5B Non-English training pairs from 100+ languages. 
 
