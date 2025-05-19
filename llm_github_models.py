@@ -1,8 +1,9 @@
 import llm
-from llm.models import Attachment, Conversation, Prompt, Response
-from typing import Optional, Iterator, List
+from llm.models import AsyncConversation, AsyncResponse, Attachment, Conversation, Prompt, Response
+from typing import AsyncGenerator, Optional, Iterator, List
 
 from azure.ai.inference import ChatCompletionsClient
+from azure.ai.inference.aio import ChatCompletionsClient as AsyncChatCompletionsClient
 from azure.core.credentials import AzureKeyCredential
 from azure.ai.inference.models import (
     ChatRequestMessage,
@@ -32,8 +33,10 @@ CHAT_MODELS = [
     ("DeepSeek-R1", True, ["text"], ["text"]),
     ("DeepSeek-V3", True, ["text"], ["text"]),
     ("DeepSeek-V3-0324", True, ["text"], ["text"]),
-    ("Llama-3.2-11B-Vision-Instruct", True, ["text", "image", "audio"], ["text"]),
-    ("Llama-3.2-90B-Vision-Instruct", True, ["text", "image", "audio"], ["text"]),
+    ("Llama-3.2-11B-Vision-Instruct", True,
+     ["text", "image", "audio"], ["text"]),
+    ("Llama-3.2-90B-Vision-Instruct", True,
+     ["text", "image", "audio"], ["text"]),
     ("Llama-3.3-70B-Instruct", True, ["text"], ["text"]),
     ("Meta-Llama-3-70B-Instruct", True, ["text"], ["text"]),
     ("Meta-Llama-3-8B-Instruct", True, ["text"], ["text"]),
@@ -87,6 +90,12 @@ def register_models(register):
                 can_stream=can_stream,
                 input_modalities=input_modalities,
                 output_modalities=output_modalities,
+            ),
+            GitHubAsyncModels(
+                model_id,
+                can_stream=can_stream,
+                input_modalities=input_modalities,
+                output_modalities=output_modalities,
             )
         )
 
@@ -133,7 +142,8 @@ def attachment_as_content_item(attachment: Attachment) -> ContentItem:
                 ),
             )
 
-    raise ValueError(f"Unsupported attachment type: {attachment.resolve_type()}")
+    raise ValueError(
+        f"Unsupported attachment type: {attachment.resolve_type()}")
 
 
 def build_messages(
@@ -156,7 +166,8 @@ def build_messages(
                         TextContentItem(text=prev_response.prompt.prompt)
                     )
                 for attachment in prev_response.attachments:
-                    attachment_message.append(attachment_as_content_item(attachment))
+                    attachment_message.append(
+                        attachment_as_content_item(attachment))
                 messages.append(UserMessage(attachment_message))
             else:
                 messages.append(UserMessage(prev_response.prompt.prompt))
@@ -175,20 +186,21 @@ def build_messages(
     return messages
 
 
-class GitHubModels(llm.Model):
+class _Shared:
     needs_key = "github"
     key_env_var = "GITHUB_MODELS_KEY"
 
     def __init__(
         self,
         model_id: str,
-        can_stream: bool,
+        can_stream: bool = True,
         input_modalities: Optional[List[str]] = None,
         output_modalities: Optional[List[str]] = None,
     ):
         self.model_id = f"github/{model_id}"
         self.model_name = model_id
         self.can_stream = can_stream
+
         self.attachment_types = set()
         if input_modalities and "image" in input_modalities:
             self.attachment_types.update(IMAGE_ATTACHMENTS)
@@ -198,6 +210,16 @@ class GitHubModels(llm.Model):
         self.input_modalities = input_modalities
         self.output_modalities = output_modalities
 
+        self.client_kwargs = {}
+        if self.model_name == "o3-mini":
+            self.client_kwargs["api_version"] = "2024-12-01-preview"
+
+    # Using the same display string for both the sync and async models makes them not show up twice in `llm models`
+    def __str__(self) -> str:
+        return f"GitHub Models: {self.model_id}"
+
+
+class GitHubModels(_Shared, llm.Model):
     def execute(
         self,
         prompt: Prompt,
@@ -207,36 +229,71 @@ class GitHubModels(llm.Model):
     ) -> Iterator[str]:
         key = self.get_key()
 
-        extra = {}
-        if self.model_name == "o3-mini":
-            extra["api_version"] = "2024-12-01-preview"
-
-        client = ChatCompletionsClient(
+        with ChatCompletionsClient(
             endpoint=INFERENCE_ENDPOINT,
             credential=AzureKeyCredential(key),
             model=self.model_name,
-            **extra,
-        )
-        messages = build_messages(prompt, conversation)
-        if stream:
-            completion = client.complete(
-                messages=messages,
-                stream=True,
-            )
-            chunks = []
-            for chunk in completion:
-                chunks.append(chunk)
-                try:
-                    content = chunk.choices[0].delta.content
-                except IndexError:
-                    content = None
-                if content is not None:
-                    yield content
-            response.response_json = None  # TODO
-        else:
-            completion = client.complete(
-                messages=messages,
-                stream=False,
-            )
-            response.response_json = None  # TODO
-            yield completion.choices[0].message.content
+            **self.client_kwargs,
+        ) as client:
+            messages = build_messages(prompt, conversation)
+            if stream:
+                completion = client.complete(
+                    messages=messages,
+                    stream=True,
+                )
+                chunks = []
+                for chunk in completion:
+                    chunks.append(chunk)
+                    try:
+                        content = chunk.choices[0].delta.content
+                    except IndexError:
+                        content = None
+                    if content is not None:
+                        yield content
+                response.response_json = None  # TODO
+            else:
+                completion = client.complete(
+                    messages=messages,
+                    stream=False,
+                )
+                response.response_json = None  # TODO
+                yield completion.choices[0].message.content
+
+
+class GitHubAsyncModels(_Shared, llm.AsyncModel):
+    async def execute(
+        self,
+        prompt: Prompt,
+        stream: bool,
+        response: AsyncResponse,
+        conversation: Optional[AsyncConversation],
+    ) -> AsyncGenerator[str, None]:
+        key = self.get_key()
+
+        async with AsyncChatCompletionsClient(
+            endpoint=INFERENCE_ENDPOINT,
+            credential=AzureKeyCredential(key),
+            model=self.model_name,
+            **self.client_kwargs,
+        ) as client:
+            messages = build_messages(prompt, conversation)
+            if stream:
+                completion = await client.complete(
+                    messages=messages,
+                    stream=True,
+                )
+                async for chunk in completion:
+                    try:
+                        content = chunk.choices[0].delta.content
+                    except IndexError:
+                        content = None
+                    if content is not None:
+                        yield content
+                response.response_json = None  # TODO
+            else:
+                completion = await client.complete(
+                    messages=messages,
+                    stream=False,
+                )
+                response.response_json = None  # TODO
+                yield completion.choices[0].message.content
