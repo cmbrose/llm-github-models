@@ -82,6 +82,7 @@ CHAT_MODELS = [
     ('gpt-4.1-nano', True, ['text', 'image'], ['text'], None),
     ('gpt-4o', True, ['text', 'image', 'audio'], ['text'], None),
     ('gpt-4o-mini', True, ['text', 'image', 'audio'], ['text'], None),
+    ('grok-3', True, ['text'], ['text'], None),
     ('jais-30b-chat', True, ['text'], ['text'], None),
     ('mistral-medium-2505', True, ['text', 'image'], ['text'], None),
     ('mistral-small-2503', True, ['text', 'image'], ['text'], None),
