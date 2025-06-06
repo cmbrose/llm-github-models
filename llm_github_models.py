@@ -51,7 +51,7 @@ CHAT_MODELS = [
     ("Cohere-command-r-plus", True, False, False, True, ["text"], ["text"]),
     ("Cohere-command-r-plus-08-2024", True, False, False, True, ["text"], ["text"]),
     ("DeepSeek-R1", True, False, False, False, ["text"], ["text"]),
-    ("DeepSeek-V3", True, False, False, False, ["text"], ["text"]),
+    ("DeepSeek-R1-0528", True, False, False, False, ["text"], ["text"]),
     ("DeepSeek-V3-0324", True, False, False, False, ["text"], ["text"]),
     (
         "Llama-3.2-11B-Vision-Instruct",
@@ -91,9 +91,6 @@ CHAT_MODELS = [
     ("Ministral-3B", True, False, False, True, ["text"], ["text"]),
     ("Mistral-Large-2411", True, False, False, True, ["text"], ["text"]),
     ("Mistral-Nemo", True, False, False, True, ["text"], ["text"]),
-    ("Mistral-large", True, False, False, True, ["text"], ["text"]),
-    ("Mistral-large-2407", True, False, False, True, ["text"], ["text"]),
-    ("Mistral-small", True, False, False, True, ["text"], ["text"]),
     ("Phi-3-medium-128k-instruct", True, False, False, False, ["text"], ["text"]),
     ("Phi-3-medium-4k-instruct", True, False, False, False, ["text"], ["text"]),
     ("Phi-3-mini-128k-instruct", True, False, False, False, ["text"], ["text"]),
